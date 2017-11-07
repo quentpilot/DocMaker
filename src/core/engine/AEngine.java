@@ -7,7 +7,7 @@
  * @Filename:           AEngine.java
  * @Date:               2017-11-06T07:20:03+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T09:22:02+01:00
+ * @Last modified time: 2017-11-07T10:48:14+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -37,7 +37,7 @@ public class AEngine implements IEngine {
   protected boolean  status = false;
 
   /**
-  * This attribute would to store final entities data
+  * This attribute would to store entities data
   *
   * @see AEngine#AEngine()
   */

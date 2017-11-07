@@ -7,7 +7,7 @@
  * @Filename:           IEngine.java
  * @Date:               2017-11-06T05:25:01+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T09:20:43+01:00
+ * @Last modified time: 2017-11-07T11:01:18+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -16,6 +16,7 @@
 package src.core.engine;
 
 import java.util.*;
+import src.core.engine.*;
 import src.builder.*;
 
 public interface IEngine {

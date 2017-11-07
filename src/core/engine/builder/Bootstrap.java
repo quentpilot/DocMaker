@@ -7,7 +7,7 @@
  * @Filename:           Bootstrap.java
  * @Date:               2017-11-06T05:21:31+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-06T09:30:52+01:00
+ * @Last modified time: 2017-11-07T10:10:49+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -42,7 +42,7 @@ public class Bootstrap extends AEngine {
   }
 
   /**
-  * Main method would to run class
+  * This method would to run class
   *
   * @see Bootstrap#Bootstrap()
   */
@@ -54,7 +54,7 @@ public class Bootstrap extends AEngine {
   }
 
   /**
-  * Main method would to clean temporary data class
+  * This method would to clean temporary data class
   *
   * @see Engine#Engine()
   */

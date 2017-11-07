@@ -6,7 +6,7 @@
 # @Filename:            clear.sh
 # @Date:                2017-11-04T18:18:19+01:00
 # @Last modified by:    quentpilot
-# @Last modified time:  2017-11-07T11:22:32+01:00
+# @Last modified time:  2017-11-06T03:51:50+01:00
 # @License:             MIT
 # @See:                 projects.quentinlebian.fr/LiveCurrencyConverter
 
@@ -14,5 +14,4 @@
 rm src/core/*/*/**.class
 rm src/core/*.class
 rm src/core/engine/*.class
-rm src/builder/*.class
 rm src/tools/print/*.class

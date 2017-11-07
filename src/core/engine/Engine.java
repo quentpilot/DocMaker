@@ -7,7 +7,7 @@
  * @Filename:           Engine.java
  * @Date:               2017-11-06T01:21:30+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T09:19:50+01:00
+ * @Last modified time: 2017-11-07T11:02:55+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -29,27 +29,11 @@ public class Engine extends AEngine {
   protected String  type = "DocMaker";
 
   /**
-  * This attribute would to build website data info
+  * This attribute would to store each engine instances
   *
   * @see Engine#run()
   */
-  protected IEngine  website = new Bootstrap();
-
-  /**
-  * This attribute would to sort database attribute content
-  * before to include them to
-  *
-  * @see Engine#run()
-  */
-  protected IEngine  sorter = new Sorter();
-
-  /**
-  * This attribute would to store documentation infos
-  * like blocs emplacement, and related content
-  *
-  * @see Engine#run()
-  */
-  protected IEngine  database = new Entity();
+  protected IEngine[]  engine = { new Entity(), new Sorter(), new Bootstrap() };
 
   /**
   * This attribute would to store final class status
@@ -81,59 +65,22 @@ public class Engine extends AEngine {
   }
 
   /**
-  * This method would to run entity builder class
-  *
-  * @see Engine#run()
-  */
-  protected boolean buildDatabase() {
-    this.getDatabase().run();
-    if (!this.getDatabase().getStatus())
-      return false;
-    return true;
-  }
-
-  /**
-  * This method would to sort entity objects
-  *
-  * @see Engine#run()
-  */
-  protected boolean sortDatabase() {
-    this.getSorter().setEntities(this.getDatabase().getEntities());
-    this.getSorter().run();
-    if (!this.getSorter().getStatus())
-      return false;
-    return true;
-  }
-
-  /**
-  * This method would to build template from entities
-  *
-  * @see Engine#run()
-  */
-  protected boolean buildWebsite() {
-    this.getWebsite().setEntities(this.getSorter().getEntities());
-    this.getWebsite().run();
-    if (!this.getWebsite().getStatus())
-      return false;
-    return true;
-  }
-
-  /**
   * Main method to run class
   *
   * @see Engine#Engine()
   */
-  public boolean run(){
-    // build entity
-    if (!this.buildDatabase())
-      return false;
-      this.getDatabase().clean();
-    // sort them
-    if (!this.sortDatabase())
-      return false;
-    // build template
-    if (!this.buildWebsite())
-      return false;
+  public boolean run() {
+    int   it = 0;
+    for (IEngine maker : this.getEngine()) {
+      if (it > 0)
+        maker.setEntities(this.getEngine()[it - 1].getEntities());
+      maker.run();
+      if (!maker.getStatus())
+        return false;
+      maker.clean();
+      it++;
+    }
+    this.result();
     return true;
   }
 
@@ -143,17 +90,17 @@ public class Engine extends AEngine {
   * @see Engine#Engine()
   */
   public void clean(){
-    Printer.printag("[@" + this.getType() + "]>", " Temporary files have been clean!");
-
-    this.getDatabase().clean();
-    this.getSorter().clean();
-    this.getWebsite().clean();
-
-    this.setType("DocMaker");
     this.setStatus(false);
-    this.setDatabase(null);
-    this.setSorter(null);
-    this.setWebsite(null);
+    Printer.printag("[@" + this.getType() + "]>", " Temporary files have been clean!");
+  }
+
+  /**
+  * This method would to print result of class we want
+  *
+  * @see Engine#run()
+  */
+  public void result() {
+    Printer.printag("[@" + this.getType() + "]>", " Future result message emplacement when finish to build website documentation!");
   }
 
   /**
@@ -176,61 +123,23 @@ public class Engine extends AEngine {
   public void setType(String classname) { this.type = classname; }
 
   /**
-  * This method would to return website attribute value
+  * This method would to return engine attribute value
   *
-  * @return website attribute value
+  * @return engine attribute value
   *
-  * @see Engine#website
+  * @see Engine#engine
   */
-  public IEngine getWebsite() { return this.website; }
+  public IEngine[] getEngine() { return this.engine; }
 
   /**
-  * This method would to set website attribute value
+  * This method would to set engine attribute value
   *
-  * @param data
-  *               value to set
+  * @param done
+  *               engine to set
   *
-  * @see Engine#website
+  * @see Engine#engine
   */
-  public void setWebsite(IEngine data) { this.website = data; }
-
-  /**
-  * This method would to return sorter attribute value
-  *
-  * @return sorter attribute value
-  *
-  * @see Engine#sorter
-  */
-  public IEngine getSorter() { return this.sorter; }
-
-  /**
-  * This method would to set sorter attribute value
-  *
-  * @param data
-  *               value to set
-  *
-  * @see Engine#sorter
-  */
-  public void setSorter(IEngine data) { this.sorter = data; }
-
-  /**
-  * This method would to return database attribute value
-  *
-  * @return database attribute value
-  *
-  * @see Engine#database
-  */
-  public IEngine getDatabase() { return this.database; }
-
-  /**
-  * This method would to set database attribute value
-  *
-  * @param data
-  *               value to set
-  *
-  * @see Engine#database
-  */
-  public void setDatabase(IEngine data) { this.database = data; }
+  public void setEngine(IEngine[] instances) { this.engine = instances; }
 
   /**
   * This method would to return status attribute value

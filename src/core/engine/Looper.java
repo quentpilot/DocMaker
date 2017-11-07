@@ -7,7 +7,7 @@
  * @Filename:           Looper.java
  * @Date:               2017-11-05T23:16:29+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-06T09:06:52+01:00
+ * @Last modified time: 2017-11-07T11:05:12+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -45,8 +45,6 @@ public class Looper { // or Loopyloop, Youpiloop, DocMaker, DokMacer, DocDoc,...
   */
   public                        Looper() {
     this.loop();
-    this.getApp().clean();
-    this.getMandatory().clean();
     Printer.printbot("Loop completed!");
   }
 

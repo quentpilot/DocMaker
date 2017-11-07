@@ -7,7 +7,7 @@
  * @Filename:           CheckRunner.java
  * @Date:               2017-11-06T00:22:06+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-06T09:33:36+01:00
+ * @Last modified time: 2017-11-07T11:04:33+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -29,6 +29,7 @@ public class CheckRunner extends Engine {
      super("checkbot");
      Printer.printbot("Check is running...");
      this.run();
+     this.clean();
    }
 
    /**
