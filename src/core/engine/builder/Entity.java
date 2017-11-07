@@ -7,7 +7,7 @@
  * @Filename:           Entity.java
  * @Date:               2017-11-06T05:00:29+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T15:30:35+01:00
+ * @Last modified time: 2017-11-07T16:25:07+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -73,5 +73,5 @@ public class Entity extends AEngine {
   *
   * @see AEngine#entities
   */
-  public ArrayList<Builder> getEntities() { return this.entities; }
+  //public ArrayList<Builder> getEntities() { return this.entities; }
 }

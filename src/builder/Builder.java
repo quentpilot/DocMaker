@@ -7,7 +7,7 @@
  * @Filename:           Builder.java
  * @Date:               2017-11-04T17:32:31+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T15:21:04+01:00
+ * @Last modified time: 2017-11-07T17:31:14+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -16,9 +16,10 @@
 package src.builder;
 
 import src.tools.print.*;
-import src.tools.ObjectFactory.*;
+import src.tools.ObjectFactory.array.*;
+import src.tools.lexer.*;
 
-public class Builder extends ObjectFactory {
+public class Builder extends ArrayObjectFactory {
 
   /**
   * This attribute would to store class type
@@ -26,6 +27,20 @@ public class Builder extends ObjectFactory {
   * @see Builder#Builder()
   */
   public String             type = "builderbot";
+
+  /**
+  * This attribute would to store Entities array
+  *
+  * @see Builder#Builder()
+  */
+  public ArrayObjectFactory entities = new ArrayObjectFactory();
+
+  /**
+  * This attribute would to store Lexer tools
+  *
+  * @see Builder#Builder()
+  */
+  public Lexer lexer = new Lexer();
 
   /**
   * Main constructor
@@ -69,6 +84,8 @@ public class Builder extends ObjectFactory {
   * @see Builder#build()
   */
   public boolean             run() {
+    if (!this.build())
+      return false;
     Printer.printag(this.getType(), "Builder is running...");
     return true;
   }
@@ -102,7 +119,45 @@ public class Builder extends ObjectFactory {
   *
   * @see Builder#type
   */
-  public void setType(String classname) {
+  public void                setType(String classname) {
     this.type = "[@" + classname + "]> ";
   }
+
+  /**
+  * This method would to return entities attribute value
+  *
+  * @return entities attribute value
+  *
+  * @see Builder#entities
+  */
+  public ArrayObjectFactory getEntities() { return this.entities; }
+
+  /**
+  * This method would to set entity attribute value
+  *
+  * @param data
+  *               value to set
+  *
+  * @see Builder#entities
+  */
+  public void setEntities(ArrayObjectFactory data) { this.entities = data; }
+
+  /**
+  * This method would to return lexer attribute value
+  *
+  * @return entities attribute value
+  *
+  * @see Builder#lexer
+  */
+  public Lexer getLexer() { return this.lexer; }
+
+  /**
+  * This method would to set lexer attribute value
+  *
+  * @param data
+  *               value to set
+  *
+  * @see Builder#lexer
+  */
+  public void setLexer(Lexer data) { this.lexer = data; }
 }

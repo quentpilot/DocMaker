@@ -7,7 +7,7 @@
  * @Filename:           AEngine.java
  * @Date:               2017-11-06T07:20:03+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T10:48:14+01:00
+ * @Last modified time: 2017-11-07T16:25:54+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -19,8 +19,9 @@ import java.util.*;
 import src.tools.print.*;
 import src.builder.*;
 import src.core.engine.IEngine;
+import src.tools.ObjectFactory.array.*;
 
-public class AEngine implements IEngine {
+public abstract class AEngine implements IEngine {
 
   /**
   * This attribute would to store type of child class to custom actions
@@ -41,7 +42,7 @@ public class AEngine implements IEngine {
   *
   * @see AEngine#AEngine()
   */
-  protected ArrayList<Builder>  entities = new ArrayList<Builder>();
+  protected ArrayObjectFactory  entities = new ArrayObjectFactory();
 
   /**
   * This attribute would to store an instance of Builder
@@ -120,7 +121,7 @@ public class AEngine implements IEngine {
   *
   * @see AEngine#entities
   */
-  public ArrayList<Builder> getEntities() { return this.entities; }
+  public ArrayObjectFactory getEntities() { return this.entities; }
 
   /**
   * This method would to set entity attribute value
@@ -130,7 +131,7 @@ public class AEngine implements IEngine {
   *
   * @see AEngine#entities
   */
-  public void setEntities(ArrayList<Builder> data) { this.entities = data; }
+  public void setEntities(ArrayObjectFactory data) { this.entities = data; }
 
   /**
   * This method would to return builder attribute value

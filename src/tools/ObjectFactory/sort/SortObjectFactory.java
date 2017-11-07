@@ -7,7 +7,7 @@
  * @Filename:           SortObjectFactory.java
  * @Date:               2017-11-07T13:58:28+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T15:22:46+01:00
+ * @Last modified time: 2017-11-07T15:48:30+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */

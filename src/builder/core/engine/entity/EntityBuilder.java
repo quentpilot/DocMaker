@@ -7,7 +7,7 @@
  * @Filename:           EntityBuilder.java
  * @Date:               2017-11-07T12:01:32+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T15:32:59+01:00
+ * @Last modified time: 2017-11-07T17:31:45+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -50,30 +50,6 @@
    */
    public boolean             build() {
      Printer.printag(this.getType(), "Builder is building...");
-     return true;
-   }
-
-   /**
-   * This method would to run main class methods
-   *
-   * @return Success or not
-   *
-   * @see EntityBuilder#build()
-   */
-   public boolean             run() {
-     Printer.printag(this.getType(), "Builder is running...");
-     return true;
-   }
-
-   /**
-   * This method would to clean dump data
-   *
-   * @return Success or not
-   *
-   * @see EntityBuilder#run()
-   */
-   public boolean             clean() {
-     Printer.printag(this.getType(), "Builder cleaning...");
      return true;
    }
 }
