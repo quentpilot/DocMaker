@@ -7,7 +7,7 @@
  * @Filename:           CheckRunner.java
  * @Date:               2017-11-06T00:22:06+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T11:04:33+01:00
+ * @Last modified time: 2017-11-07T11:51:16+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -64,6 +64,6 @@ public class CheckRunner extends Engine {
    * @see Engine#Engine()
    */
    public void clean(){
-     Printer.printag("[@" + this.getType() + "]>", " Website just built has been checked!");
+     Printer.printag("[@" + this.getType() + "]>", " Website built has been checked!");
    }
 }

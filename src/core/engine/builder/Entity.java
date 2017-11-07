@@ -7,7 +7,7 @@
  * @Filename:           Entity.java
  * @Date:               2017-11-06T05:00:29+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-06T09:32:17+01:00
+ * @Last modified time: 2017-11-07T15:30:35+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -19,6 +19,7 @@ import java.util.*;
 import src.tools.print.*;
 import src.core.engine.AEngine;
 import src.builder.*;
+import src.builder.core.engine.entity.*;
 
 public class Entity extends AEngine {
 
@@ -38,6 +39,8 @@ public class Entity extends AEngine {
   * @see Entity#run()
   */
   public boolean  build() {
+    this.setBuilder(new EntityBuilder());
+
     Printer.printag("[@" + this.getType() + "]>", " Working on entities builder...");
     return true;
   }

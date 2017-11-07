@@ -7,7 +7,7 @@
  * @Filename:           Engine.java
  * @Date:               2017-11-06T01:21:30+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T11:02:55+01:00
+ * @Last modified time: 2017-11-07T14:36:00+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -33,7 +33,7 @@ public class Engine extends AEngine {
   *
   * @see Engine#run()
   */
-  protected IEngine[]  engine = { new Entity(), new Sorter(), new Bootstrap() };
+  protected IEngine[]  engine = { null, new Entity(), new Sorter(), new Bootstrap(), null };
 
   /**
   * This attribute would to store final class status
@@ -71,13 +71,15 @@ public class Engine extends AEngine {
   */
   public boolean run() {
     int   it = 0;
-    for (IEngine maker : this.getEngine()) {
-      if (it > 0)
-        maker.setEntities(this.getEngine()[it - 1].getEntities());
-      maker.run();
-      if (!maker.getStatus())
-        return false;
-      maker.clean();
+    for (IEngine factory : this.getEngine()) {
+      if (it > 0 && it < (this.getEngine().length - 1)) {
+        if (it > 2)
+          factory.setEntities(this.getEngine()[it - 1].getEntities());
+        factory.run();
+        if (!factory.getStatus())
+          return false;
+        factory.clean();
+      }
       it++;
     }
     this.result();
