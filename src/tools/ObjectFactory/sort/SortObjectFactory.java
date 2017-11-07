@@ -7,7 +7,7 @@
  * @Filename:           SortObjectFactory.java
  * @Date:               2017-11-07T13:58:28+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T15:48:30+01:00
+ * @Last modified time: 2017-11-07T19:45:21+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -62,6 +62,15 @@
    */
    public boolean             clean() {
      Printer.printbot("Sort objects factory cleaning...");
+     return true;
+   }
+
+   /**
+   * This method would to check actions
+   *
+   * @see SortObjectFactory#run()
+   */
+   public boolean             check() {
      return true;
    }
  }

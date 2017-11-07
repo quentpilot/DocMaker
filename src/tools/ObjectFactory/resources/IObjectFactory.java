@@ -7,7 +7,7 @@
  * @Filename:           IObjectFactory.java
  * @Date:               2017-11-07T13:43:17+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T14:22:08+01:00
+ * @Last modified time: 2017-11-07T19:43:05+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -43,4 +43,11 @@ public interface IObjectFactory {
   * @see IObjectFactory#run()
   */
   public boolean clean();
+
+  /**
+  * Main method to check actions
+  *
+  * @see IObjectFactory#run()
+  */
+  public boolean check();
 }

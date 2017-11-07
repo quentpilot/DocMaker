@@ -1,13 +1,13 @@
 /**
  * @Description:        Object class would to do some stuff
- * @Author:             Quentin Le Bian <quentpilot>
+ * @Author:             Quentin Le Bianw <quentpilot>
  * @Email:              quentin.lebian@pilotaweb.fr
  * @Project:            DocMaker
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
- * @Filename:           EntityChecker.java
- * @Date:               2017-11-06T05:55:48+01:00
+ * @Filename:           EngineChecker.java
+ * @Date:               2017-11-07T18:27:30+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T19:50:45+01:00
+ * @Last modified time: 2017-11-07T19:49:07+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -22,9 +22,9 @@
  import src.core.engine.*;
  import src.tools.ObjectFactory.array.*;
 
- public class EntityChecker extends Checker {
+ public class EngineChecker extends Checker {
 
-   public EntityChecker() {
+   public EngineChecker() {
      super();
    }
  }

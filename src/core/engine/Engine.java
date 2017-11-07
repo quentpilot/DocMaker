@@ -7,7 +7,7 @@
  * @Filename:           Engine.java
  * @Date:               2017-11-06T01:21:30+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T16:26:26+01:00
+ * @Last modified time: 2017-11-07T19:17:51+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -136,7 +136,7 @@ public class Engine extends AEngine {
   /**
   * This method would to set engine attribute value
   *
-  * @param done
+  * @param instances
   *               engine to set
   *
   * @see Engine#engine

@@ -6,7 +6,7 @@
 # @Filename:            clear.sh
 # @Date:                2017-11-04T18:18:19+01:00
 # @Last modified by:    quentpilot
-# @Last modified time:  2017-11-07T17:56:23+01:00
+# @Last modified time:  2017-11-07T21:14:09+01:00
 # @License:             MIT
 # @See:                 projects.quentinlebian.fr/LiveCurrencyConverter
 
@@ -21,3 +21,5 @@ rm -r src/tools/lexer/*.class
 rm -r src/tools/lexer/*/**.class
 rm -r src/tools/ObjectFactory/*.class
 rm -r src/tools/ObjectFactory/*/**.class
+rm -r src/tools/ResourcesManager/*.class
+rm -r src/tools/ResourcesManager/*/**.class

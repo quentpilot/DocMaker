@@ -7,7 +7,7 @@
  * @Filename:           Entity.java
  * @Date:               2017-11-06T05:00:29+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T16:25:07+01:00
+ * @Last modified time: 2017-11-07T19:30:08+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -40,7 +40,7 @@ public class Entity extends AEngine {
   */
   public boolean  build() {
     this.setBuilder(new EntityBuilder());
-
+    this.setEntities(this.getBuilder().getEntities());
     Printer.printag("[@" + this.getType() + "]>", " Working on entities builder...");
     return true;
   }
@@ -67,11 +67,11 @@ public class Entity extends AEngine {
   }
 
   /**
-  * This method would to return entities attribute value
+  * This method would to check actions
   *
-  * @return entities attribute value
-  *
-  * @see AEngine#entities
+  * @see Entity#run()
   */
-  //public ArrayList<Builder> getEntities() { return this.entities; }
+  public boolean check() {
+    return true;
+  }
 }

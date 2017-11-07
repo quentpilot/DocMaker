@@ -7,7 +7,7 @@
  * @Filename:           Builder.java
  * @Date:               2017-11-04T17:32:31+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T17:31:14+01:00
+ * @Last modified time: 2017-11-07T21:06:53+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -18,6 +18,9 @@ package src.builder;
 import src.tools.print.*;
 import src.tools.ObjectFactory.array.*;
 import src.tools.lexer.*;
+import src.tools.ResourcesManager.*;
+import src.tools.ResourcesManager.builder.*;
+import src.builder.entity.resources.models.*;
 
 public class Builder extends ArrayObjectFactory {
 
@@ -43,23 +46,35 @@ public class Builder extends ArrayObjectFactory {
   public Lexer lexer = new Lexer();
 
   /**
-  * Main constructor
+  * This attribute would to store entities classes models
   *
   * @see Builder#Builder()
   */
-  public                     Builder() {
-    super();
-    this.setType(this.type);
-    Printer.printag(this.getType(), "Builder is working...");
-  }
+  public Model model = new EntityModel();
+
+  /**
+  * This attribute would to store Resources tools
+  *
+  * @see Builder#Builder()
+  */
+  public Resources resources = new ResourcesBuilder();
 
   /**
   * Main constructor
   *
   * @see Builder#Builder()
   */
+  public                     Builder() {
+    this.setType(this.type);
+    Printer.printag(this.getType(), "Builder is working...");
+  }
+
+  /**
+  * Second constructor
+  *
+  * @see Builder#Builder()
+  */
   public                     Builder(String classname) {
-    super();
     this.setType(classname);
     Printer.printag(this.getType(), "Builder is working...");
   }
@@ -145,7 +160,7 @@ public class Builder extends ArrayObjectFactory {
   /**
   * This method would to return lexer attribute value
   *
-  * @return entities attribute value
+  * @return lexer attribute value
   *
   * @see Builder#lexer
   */
@@ -160,4 +175,42 @@ public class Builder extends ArrayObjectFactory {
   * @see Builder#lexer
   */
   public void setLexer(Lexer data) { this.lexer = data; }
+
+  /**
+  * This method would to return model attribute value
+  *
+  * @return model attribute value
+  *
+  * @see Builder#model
+  */
+  //public Model getModel() { return this.model; }
+
+  /**
+  * This method would to set model attribute value
+  *
+  * @param data
+  *               value to set
+  *
+  * @see Builder#modellexer
+  */
+  //public void setModel(Model data) { this.model = data; }
+
+  /**
+  * This method would to return lexer attribute value
+  *
+  * @return resources attribute value
+  *
+  * @see Builder#resources
+  */
+  public Resources getResources() { return this.resources; }
+
+  /**
+  * This method would to set resources attribute value
+  *
+  * @param data
+  *               value to set
+  *
+  * @see Builder#resources
+  */
+  public void setResources(Resources data) { this.resources = data; }
 }

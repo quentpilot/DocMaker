@@ -7,7 +7,7 @@
  * @Filename:           Lexer.java
  * @Date:               2017-11-07T16:38:55+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T18:01:13+01:00
+ * @Last modified time: 2017-11-07T20:35:14+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -30,7 +30,7 @@ public class Lexer extends ALexer {
   *
   * @see Lexer#Lexer()
   */
-  public ILexer[] lexer = {new Reader(), new Writer(), new Parser()};
+  public ILexer[] lexer = { new Reader(), new Writer(), new Parser() };
 
   /**
   * Main constructor
