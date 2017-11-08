@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           Builder.java
  * @Date:               2017-11-04T17:32:31+01:00
- * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-08T12:52:35+01:00
+ * @Last modified by:   quentin
+ * @Last modified time: 2017-11-08T16:54:42+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -15,6 +15,7 @@
 
 package src.builder;
 
+import java.lang.*;
 import src.tools.print.*;
 import src.tools.ObjectFactory.array.*;
 import src.tools.lexer.*;

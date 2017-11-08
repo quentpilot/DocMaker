@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           DatabaseBuilder.java
  * @Date:               2017-11-07T13:01:28+01:00
- * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-08T13:14:55+01:00
+ * @Last modified by:   quentin
+ * @Last modified time: 2017-11-08T19:52:28+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -15,6 +15,8 @@
 
  package src.builder.database;
 
+ import java.util.ArrayList;
+ import java.io.File;
  import src.builder.database.*;
  import src.tools.print.*;
 
@@ -26,6 +28,7 @@
    * @see DatabaseBuilder#DatabaseBuilder()
    */
    public            DatabaseBuilder() {
+     this.setPaths(new ArrayList<File>());
      Printer.printag("[@databasebuilder]> ", "Building of database...");
    }
 

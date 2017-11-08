@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           Lexer.java
  * @Date:               2017-11-07T16:38:55+01:00
- * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-08T13:24:31+01:00
+ * @Last modified by:   quentin
+ * @Last modified time: 2017-11-08T19:49:49+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -22,6 +22,7 @@ import src.tools.lexer.resources.*;
 import src.tools.lexer.read.*;
 import src.tools.lexer.write.*;
 import src.tools.lexer.parse.*;
+import src.tools.lexer.build.*;
 
 import src.tools.print.*;
 
@@ -32,7 +33,7 @@ public class Lexer extends ALexer {
   *
   * @see Lexer#Lexer()
   */
-  public ILexer[] lexer = { new Reader(), new Writer(), new Parser() };
+  public ILexer[] lexer = { new Reader(), new Writer(), new Parser(), new Builder() };
 
   /**
   * Main constructor
@@ -49,6 +50,7 @@ public class Lexer extends ALexer {
   * @see Lexer#Lexer()
   */
   public Lexer(ArrayList<File> files) {
+    this.setDump(files);
     Printer.printag("[@lexer]>", " is working...");
   }
 
@@ -107,6 +109,17 @@ public class Lexer extends ALexer {
   */
   public ILexer parse(){
     return this.getLexer()[2];
+  }
+
+  /**
+  * This method would to return Builder() instance
+  *
+  * @return Builder instance
+  *
+  * @see Lexer#lexer
+  */
+  public ILexer build(String format) {
+    return this.getLexer()[3];
   }
 
   /**

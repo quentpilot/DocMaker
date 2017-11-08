@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           Model.java
  * @Date:               2017-11-07T18:59:15+01:00
- * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T21:10:07+01:00
+ * @Last modified by:   quentin
+ * @Last modified time: 2017-11-08T22:05:59+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -17,6 +17,7 @@
 
  import src.builder.*;
  import src.tools.print.*;
+ import java.lang.*;
 
  public class Model {
 
@@ -40,6 +41,13 @@
    * @see Builder#Builder()
    */
    public String             type = "modelbot";
+
+   /**
+   * This attribute would to store file format
+   *
+   * @see Builder#Builder()
+   */
+   public String             format = "json";
 
    /**
    * This attribute would to store current entity model iteration
@@ -75,6 +83,7 @@
    public                     Model(String classname) {
      this.id = this.iterator;
      this.iterator++;
+     this.setType(classname + "#" + this.id);
      Printer.printag(this.getType(), "Model is working...");
    }
 
@@ -135,6 +144,27 @@
    */
    public void                setType(String classname) {
      this.type = "[@" + classname + "]> ";
+   }
+
+   /**
+   * This method would to return format attribute value
+   *
+   * @return format attribute value
+   *
+   * @see Model#format
+   */
+   public String              getFormat() { return this.format; }
+
+   /**
+   * This method would to set format attribute value
+   *
+   * @param type
+   *               value to set
+   *
+   * @see Model#format
+   */
+   public void                setFormat(String type) {
+     this.type = type;
    }
 
    /**

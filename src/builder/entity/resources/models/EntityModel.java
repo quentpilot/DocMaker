@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           EntityModel.java
  * @Date:               2017-11-07T18:58:07+01:00
- * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-08T12:34:06+01:00
+ * @Last modified by:   quentin
+ * @Last modified time: 2017-11-08T16:03:20+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -17,6 +17,7 @@
 
  import src.builder.entity.resources.models.Model;
  import src.tools.print.*;
+ import java.lang.*;
 
  public class EntityModel extends Model {
 
@@ -28,7 +29,6 @@
    public                     EntityModel() {
      super();
      this.setType("entity#" + this.id);
-     Printer.printag(this.getType(), "Entity is building...");
    }
 
    /**
@@ -37,7 +37,7 @@
    * @see EntityModel#EntityModel(String classname)
    */
    public                     EntityModel(String classname) {
-     super();
+     super(classname);
      Printer.printag(this.getType(), "Entity is building...");
    }
  }
