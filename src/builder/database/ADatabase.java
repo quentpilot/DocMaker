@@ -1,13 +1,13 @@
 /**
  * @Description:        Object class would to do some stuff
- * @Author:             Quentin Le Bian <quentin>
+ * @Author:             Quentin Le Bian <quentpilot>
  * @Email:              quentin.lebian@pilotaweb.fr
  * @Project:            DocMaker
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
- * @Filename:           DatabaseBuilder.java
- * @Date:               2017-11-07T13:01:28+01:00
+ * @Filename:           ADatabase.java
+ * @Date:               2017-11-08T12:18:09+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-08T13:14:55+01:00
+ * @Last modified time: 2017-11-08T13:29:11+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -15,19 +15,25 @@
 
  package src.builder.database;
 
+ import java.util.*;
+ import java.io.*;
  import src.builder.database.*;
- import src.tools.print.*;
+ import src.builder.database.resources.*;
 
- public class DatabaseBuilder extends ADatabase {
+ public abstract class ADatabase implements IDatabase {
+
+   /**
+   * This attribute would to store list of well parsed files
+   * before to sort
+   */
+   public ArrayList<File>   paths = new ArrayList<File>();
 
    /**
    * Main constructor
    *
-   * @see DatabaseBuilder#DatabaseBuilder()
+   * @see ADatabase#ADatabase()
    */
-   public            DatabaseBuilder() {
-     Printer.printag("[@databasebuilder]> ", "Building of database...");
-   }
+   public            ADatabase(){}
 
    /**
    * Second constructor
@@ -35,9 +41,9 @@
    * @param dirpath
    *                database (resources) directory to build
    *
-   * @see DatabaseBuilder#DatabaseBuilder()
+   * @see ADatabase#ADatabase()
    */
-   public           DatabaseBuilder(String dirpath){}
+   public           ADatabase(String dirpath){}
 
 
    /**
@@ -45,7 +51,7 @@
    *
    * @return Success or not
    *
-   * @see DatabaseBuilder#DatabaseBuilder()
+   * @see ADatabase#ADatabase()
    */
    public boolean load(){
      return true;
@@ -59,7 +65,7 @@
    *
    * @return Success or not
    *
-   * @see DatabaseBuilder#DatabaseBuilder()
+   * @see ADatabase#ADatabase()
    */
    public boolean set(Request data){
      return true;
@@ -73,7 +79,7 @@
    *
    * @return related response
    *
-   * @see DatabaseBuilder#DatabaseBuilder()
+   * @see ADatabase#ADatabase()
    */
    public Response get(Request data){
      return new Response();
@@ -87,7 +93,7 @@
    *
    * @return related response
    *
-   * @see DatabaseBuilder#DatabaseBuilder()
+   * @see ADatabase#ADatabase()
    */
    public Response find(Request data){
      return new Response();
@@ -98,9 +104,28 @@
    *
    * @return success or not
    *
-   * @see DatabaseBuilder#DatabaseBuilder()
+   * @see ADatabase#ADatabase()
    */
    public boolean clean() {
      return true;
    }
+
+   /**
+   * This method would to return paths attribute value
+   *
+   * @return paths attribute value
+   *
+   * @see Builder#paths
+   */
+   public ArrayList<File>   getPaths() { return this.paths; }
+
+   /**
+   * This method would to set paths attribute value
+   *
+   * @param list
+   *               value to set
+   *
+   * @see Builder#paths
+   */
+   public void                setPaths(ArrayList<File> list) { this.paths = list; }
  }

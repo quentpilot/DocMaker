@@ -7,7 +7,7 @@
  * @Filename:           EntityBuilder.java
  * @Date:               2017-11-07T12:01:32+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T20:58:39+01:00
+ * @Last modified time: 2017-11-08T13:29:22+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -18,6 +18,7 @@
  import src.builder.*;
  import src.tools.print.*;
  import src.tools.check.*;
+ import src.tools.lexer.*;
 
  public class EntityBuilder extends Builder {
 
@@ -27,9 +28,11 @@
    * @see EntityBuilder#EntityBuilder()
    */
    public                     EntityBuilder() {
+     super();
      this.setType("entitybuilderbot");
      this.setChecker(new EntityChecker());
      Printer.printag(this.getType(), "Builder is working...");
+     this.run();
    }
 
    /**
@@ -38,9 +41,11 @@
    * @see EntityBuilder#EntityBuilder()
    */
    public                     EntityBuilder(String classname) {
+     super(classname);
      this.setType("entitybuilderbot");
      this.setChecker(new EntityChecker());
      Printer.printag(this.getType(), "Builder is working...");
+     this.run();
    }
 
    /**
@@ -51,6 +56,10 @@
    * @see EntityBuilder#run()
    */
    public boolean             build() {
+    if (!this.getDatabases()[1].load())
+      return false;
+    //this.setLexer(new Lexer(this.getDatabases()[1].getPaths()));
+
      Printer.printag(this.getType(), "Builder is building...");
      return true;
    }

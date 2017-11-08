@@ -7,7 +7,7 @@
  * @Filename:           EntityModel.java
  * @Date:               2017-11-07T18:58:07+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T21:08:30+01:00
+ * @Last modified time: 2017-11-08T12:34:06+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -26,8 +26,7 @@
    * @see EntityModel#EntityModel()
    */
    public                     EntityModel() {
-     this.id = this.iterator;
-     this.iterator++;
+     super();
      this.setType("entity#" + this.id);
      Printer.printag(this.getType(), "Entity is building...");
    }
@@ -38,8 +37,7 @@
    * @see EntityModel#EntityModel(String classname)
    */
    public                     EntityModel(String classname) {
-     this.id = this.iterator;
-     this.iterator++;
+     super();
      Printer.printag(this.getType(), "Entity is building...");
    }
  }

@@ -7,7 +7,7 @@
  * @Filename:           Lexer.java
  * @Date:               2017-11-07T16:38:55+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T20:35:14+01:00
+ * @Last modified time: 2017-11-08T13:24:31+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -15,6 +15,8 @@
 
 package src.tools.lexer;
 
+import java.util.ArrayList;
+import java.io.File;
 import src.tools.lexer.*;
 import src.tools.lexer.resources.*;
 import src.tools.lexer.read.*;
@@ -38,6 +40,15 @@ public class Lexer extends ALexer {
   * @see Lexer#Lexer()
   */
   public Lexer() {
+    Printer.printag("[@lexer]>", " is working...");
+  }
+
+  /**
+  * Main constructor
+  *
+  * @see Lexer#Lexer()
+  */
+  public Lexer(ArrayList<File> files) {
     Printer.printag("[@lexer]>", " is working...");
   }
 

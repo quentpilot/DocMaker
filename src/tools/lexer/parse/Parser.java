@@ -7,7 +7,7 @@
  * @Filename:           Parser.java
  * @Date:               2017-11-06T00:05:00+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T17:41:22+01:00
+ * @Last modified time: 2017-11-08T13:26:38+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/LiveCurrencyConverter
  */
@@ -15,7 +15,8 @@
 
  package src.tools.lexer.parse;
 
- import src.tools.lexer.ALexer;
+ import src.tools.lexer.*;
+ import src.tools.lexer.resources.*;
  import src.tools.print.*;
 
  public class Parser extends ALexer {

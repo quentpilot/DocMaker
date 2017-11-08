@@ -7,7 +7,7 @@
  * @Filename:           Builder.java
  * @Date:               2017-11-04T17:32:31+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T21:06:53+01:00
+ * @Last modified time: 2017-11-08T12:52:35+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -21,6 +21,8 @@ import src.tools.lexer.*;
 import src.tools.ResourcesManager.*;
 import src.tools.ResourcesManager.builder.*;
 import src.builder.entity.resources.models.*;
+import src.builder.database.*;
+import src.builder.database.resources.*;
 
 public class Builder extends ArrayObjectFactory {
 
@@ -58,6 +60,14 @@ public class Builder extends ArrayObjectFactory {
   * @see Builder#Builder()
   */
   public Resources resources = new ResourcesBuilder();
+
+  /**
+  * This attribute would to store IDatabase instances
+  * to manage database with entities
+  *
+  * @see Builder#Builder()
+  */
+  public IDatabase[] databases = { new DatabaseBuilder(), new DatabaseFinder() };
 
   /**
   * Main constructor
@@ -183,7 +193,7 @@ public class Builder extends ArrayObjectFactory {
   *
   * @see Builder#model
   */
-  //public Model getModel() { return this.model; }
+  public Model getModel() { return this.model; }
 
   /**
   * This method would to set model attribute value
@@ -191,12 +201,12 @@ public class Builder extends ArrayObjectFactory {
   * @param data
   *               value to set
   *
-  * @see Builder#modellexer
+  * @see Builder#model
   */
-  //public void setModel(Model data) { this.model = data; }
+  public void setModel(Model data) { this.model = data; }
 
   /**
-  * This method would to return lexer attribute value
+  * This method would to return resources attribute value
   *
   * @return resources attribute value
   *
@@ -213,4 +223,23 @@ public class Builder extends ArrayObjectFactory {
   * @see Builder#resources
   */
   public void setResources(Resources data) { this.resources = data; }
+
+  /**
+  * This method would to return databases attribute value
+  *
+  * @return databases attribute value
+  *
+  * @see Builder#databases
+  */
+  public IDatabase[] getDatabases() { return this.databases; }
+
+  /**
+  * This method would to set databases attribute value
+  *
+  * @param data
+  *               value to set
+  *
+  * @see Builder#databases
+  */
+  public void setResources(IDatabase[] data) { this.databases = data; }
 }

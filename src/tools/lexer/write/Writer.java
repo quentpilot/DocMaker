@@ -7,7 +7,7 @@
  * @Filename:           Writer.java
  * @Date:               2017-11-05T23:26:45+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T17:42:41+01:00
+ * @Last modified time: 2017-11-08T13:26:32+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/LiveCurrencyConverter
  */
@@ -16,6 +16,7 @@
  package src.tools.lexer.write;
 
  import src.tools.lexer.*;
+ import src.tools.lexer.resources.*;
  import src.tools.print.*;
 
  public class Writer extends ALexer {
