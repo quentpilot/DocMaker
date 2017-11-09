@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           Reader.java
  * @Date:               2017-11-05T23:26:58+01:00
- * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-08T13:26:25+01:00
+ * @Last modified by:   quentin
+ * @Last modified time: 2017-11-09T14:24:24+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/LiveCurrencyConverter
  */
@@ -26,9 +26,7 @@
    *
    * @see Reader#Reader()
    */
-   public Reader() {
-     Printer.printag("[@reader]>", " is working...");
-   }
+   public Reader() {}
 
    /**
    * This method would to build object actions

@@ -7,7 +7,7 @@
  * @Filename:           ArrayObjectFactory.java
  * @Date:               2017-11-07T13:52:13+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T12:05:41+01:00
+ * @Last modified time: 2017-11-09T14:23:13+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -28,18 +28,14 @@
    *
    * @see ObjectFactory#ObjectFactory()
    */
-   public                     ArrayObjectFactory() {
-     Printer.printbot("Array objects factory is working...");
-   }
+   public                     ArrayObjectFactory() {}
 
    /**
    * Model builder constructor
    *
    * @see ObjectFactory#ObjectFactory()
    */
-   public                     ArrayObjectFactory(ALexer data) {
-     Printer.printbot("Array objects factory is working...");
-   }
+   public                     ArrayObjectFactory(ALexer data) {}
 
    /**
    * This method would to build object actions
@@ -49,7 +45,6 @@
    * @see ArrayObjectFactory#run()
    */
    public boolean             build() {
-     Printer.printbot("Objects factory is building...");
      return true;
    }
 
@@ -65,7 +60,6 @@
       return false;
     if (!this.build())
       return false;
-    Printer.printbot("Objects factory is running...");
      return true;
    }
  }

@@ -7,7 +7,7 @@
  * @Filename:           SorterBuilder.java
  * @Date:               2017-11-07T12:03:15+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T13:47:34+01:00
+ * @Last modified time: 2017-11-09T14:21:24+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -42,7 +42,6 @@
      super();
      this.setType("sorterbuilderbot");
      this.setChecker(new EntityChecker());
-     Printer.printag(this.getType(), "Builder is working...");
      this.run();
    }
 
@@ -55,7 +54,6 @@
      super(classname);
      this.setType("sorterbuilderbot");
      this.setChecker(new EntityChecker());
-     Printer.printag(this.getType(), "Builder is working...");
      this.run();
    }
 
@@ -70,7 +68,6 @@
       this.setSort(new Sort());
       this.setLexer(this.getSort().getLexer());
       this.setEntities(new ArrayObjectFactory(this.getLexer()));
-      Printer.printag(this.getType(), "Builder is building...");
       return true;
    }
 

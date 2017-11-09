@@ -7,7 +7,7 @@
  * @Filename:           Builder.java
  * @Date:               2017-11-04T17:32:31+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T16:54:42+01:00
+ * @Last modified time: 2017-11-09T14:22:51+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -77,7 +77,6 @@ public class Builder extends ArrayObjectFactory {
   */
   public                     Builder() {
     this.setType(this.type);
-    Printer.printag(this.getType(), "Builder is working...");
   }
 
   /**
@@ -87,7 +86,6 @@ public class Builder extends ArrayObjectFactory {
   */
   public                     Builder(String classname) {
     this.setType(classname);
-    Printer.printag(this.getType(), "Builder is working...");
   }
 
   /**
@@ -98,7 +96,6 @@ public class Builder extends ArrayObjectFactory {
   * @see Builder#run()
   */
   public boolean             build() {
-    Printer.printag(this.getType(), "Builder is building...");
     return true;
   }
 
@@ -112,7 +109,6 @@ public class Builder extends ArrayObjectFactory {
   public boolean             run() {
     if (!this.build())
       return false;
-    Printer.printag(this.getType(), "Builder is running...");
     return true;
   }
 
@@ -124,7 +120,6 @@ public class Builder extends ArrayObjectFactory {
   * @see Builder#run()
   */
   public boolean             clean() {
-    Printer.printag(this.getType(), "Builder cleaning...");
     return true;
   }
 

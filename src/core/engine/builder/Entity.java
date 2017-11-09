@@ -7,7 +7,7 @@
  * @Filename:           Entity.java
  * @Date:               2017-11-06T05:00:29+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T12:08:47+01:00
+ * @Last modified time: 2017-11-09T14:20:26+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -41,7 +41,6 @@ public class Entity extends AEngine {
   public boolean  build() {
     this.setBuilder(new EntityBuilder());
     this.setEntities(this.getBuilder().getEntities());
-    Printer.printag("[@" + this.getType() + "]>", " Working on entities builder...");
     return true;
   }
 
@@ -54,7 +53,6 @@ public class Entity extends AEngine {
     if (!this.build())
       return false;
     this.setStatus(true);
-    Printer.printag("[@" + this.getType() + "]>", " Entities are built!");
     return true;
   }
 
@@ -63,9 +61,7 @@ public class Entity extends AEngine {
   *
   * @see Engine#Engine()
   */
-  public void     clean() {
-    Printer.printag("[@" + this.getType() + "]>", " Dump data have been clean!");
-  }
+  public void     clean() {}
 
   /**
   * This method would to check actions

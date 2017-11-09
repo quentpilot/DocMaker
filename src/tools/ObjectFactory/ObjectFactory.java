@@ -7,7 +7,7 @@
  * @Filename:           ObjectFactory.java
  * @Date:               2017-11-07T13:52:23+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T12:09:50+01:00
+ * @Last modified time: 2017-11-09T14:23:41+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -43,7 +43,6 @@
    * @see ObjectFactory#ObjectFactory()
    */
    public                     ObjectFactory() {
-     Printer.printbot("Objects factory is working...");
    }
 
    /**
@@ -54,7 +53,6 @@
    * @see ObjectFactory#run()
    */
    public boolean             build() {
-     Printer.printbot("Objects factory is building...");
      return true;
    }
 
@@ -66,7 +64,6 @@
    * @see ObjectFactory#build()
    */
    public boolean             run() {
-     Printer.printbot("Objects factory is running...");
      return true;
    }
 
@@ -78,7 +75,6 @@
    * @see ObjectFactory#run()
    */
    public boolean             clean() {
-     Printer.printbot("Objects factory cleaning...");
      return true;
    }
 

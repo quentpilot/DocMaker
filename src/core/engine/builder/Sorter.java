@@ -7,7 +7,7 @@
  * @Filename:           Sorter.java
  * @Date:               2017-11-06T05:20:32+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T12:51:13+01:00
+ * @Last modified time: 2017-11-09T14:20:46+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -40,7 +40,6 @@ public class Sorter extends AEngine {
   public boolean  build() {
     this.setBuilder(new SorterBuilder());
     this.setEntities(this.getBuilder().getEntities());
-    Printer.printag("[@" + this.getType() + "]>", " Working on entities sorting...");
     return true;
   }
 
@@ -53,7 +52,6 @@ public class Sorter extends AEngine {
     if (!this.build())
       return false;
     this.setStatus(true);
-    Printer.printag("[@" + this.getType() + "]>", " Entities sortation...");
     return true;
   }
 
@@ -62,9 +60,7 @@ public class Sorter extends AEngine {
   *
   * @see Entity#Entity()
   */
-  public void     clean() {
-    Printer.printag("[@" + this.getType() + "]>", " Dump data have been clean!");
-  }
+  public void     clean() {}
 
   /**
   * This method would to check actions

@@ -7,7 +7,7 @@
  * @Filename:           Model.java
  * @Date:               2017-11-07T18:59:15+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T22:05:59+01:00
+ * @Last modified time: 2017-11-09T14:25:00+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -72,7 +72,6 @@
      this.id = this.iterator;
      this.iterator++;
      this.setType("entitymodel#" + this.id);
-     Printer.printag(this.getType(), "Model is building...");
    }
 
    /**
@@ -84,7 +83,6 @@
      this.id = this.iterator;
      this.iterator++;
      this.setType(classname + "#" + this.id);
-     Printer.printag(this.getType(), "Model is working...");
    }
 
    /**

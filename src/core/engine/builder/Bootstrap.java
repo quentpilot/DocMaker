@@ -7,7 +7,7 @@
  * @Filename:           Bootstrap.java
  * @Date:               2017-11-06T05:21:31+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T12:50:11+01:00
+ * @Last modified time: 2017-11-09T14:21:50+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -41,7 +41,6 @@ public class Bootstrap extends AEngine {
   public boolean  build() {
     this.setBuilder(new BootstrapBuilder());
     this.setEntities(this.getBuilder().getEntities());
-    Printer.printag("[@" + this.getType() + "]>", " Working on website building...");
     return true;
   }
 
@@ -53,7 +52,6 @@ public class Bootstrap extends AEngine {
   public boolean  run() {
     if (!this.build())
       return false;
-    Printer.printag("[@" + this.getType() + "]>", " Merging entities in template...");
     return true;
   }
 
@@ -62,9 +60,7 @@ public class Bootstrap extends AEngine {
   *
   * @see Engine#Engine()
   */
-  public void     clean() {
-    Printer.printag("[@" + this.getType() + "]>", " Dump data have been clean!");
-  }
+  public void     clean() {}
 
   /**
   * This method would to check actions

@@ -7,7 +7,7 @@
  * @Filename:           EntityBuilder.java
  * @Date:               2017-11-07T12:01:32+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T23:16:34+01:00
+ * @Last modified time: 2017-11-09T14:22:18+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -36,7 +36,6 @@
      this.setType("entitybuilderbot");
      this.setLexer(new Lexer());
      this.setChecker(new EntityChecker());
-     Printer.printag(this.getType(), "Builder is working...");
      this.run();
    }
 
@@ -49,7 +48,6 @@
      super(classname);
      this.setType("entitybuilderbot");
      this.setChecker(new EntityChecker());
-     Printer.printag(this.getType(), "Builder is working...");
      this.run();
    }
 
@@ -67,7 +65,6 @@
     if (!this.getLexer().run())
       return false;
     this.setEntities(new ArrayObjectFactory(this.getLexer()));
-     Printer.printag(this.getType(), "Builder is building...");
      return true;
    }
 }

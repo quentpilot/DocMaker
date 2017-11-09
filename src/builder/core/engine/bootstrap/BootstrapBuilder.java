@@ -7,7 +7,7 @@
  * @Filename:           BootstrapBuilder.java
  * @Date:               2017-11-07T12:02:08+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T13:52:07+01:00
+ * @Last modified time: 2017-11-09T14:22:02+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -40,9 +40,8 @@
    */
    public                       BootstrapBuilder() {
      super();
-     this.setType(" bootstrapbuilderbot");
+     this.setType("bootstrapbuilderbot");
      this.setChecker(new EntityChecker());
-     Printer.printag(this.getType(), "Builder is working...");
      this.run();
    }
 
@@ -55,7 +54,6 @@
      super(classname);
      this.setType("bootstrapbuilderbot");
      this.setChecker(new EntityChecker());
-     Printer.printag(this.getType(), "Builder is working...");
      this.run();
    }
 
@@ -70,7 +68,6 @@
      this.setWebsite(new TemplateBuilder(this.getEntities()));
      this.setLexer(this.getWebsite().getLexer());
      this.setEntities(new ArrayObjectFactory(this.getLexer()));
-     Printer.printag(this.getType(), "Builder is building...");
      return true;
    }
 

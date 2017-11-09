@@ -7,7 +7,7 @@
  * @Filename:           Builder.java
  * @Date:               2017-11-08T18:50:38+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T19:09:45+01:00
+ * @Last modified time: 2017-11-09T14:24:41+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -26,9 +26,7 @@
    *
    * @see  Builder# Builder()
    */
-   public  Builder() {
-     Printer.printag("[@builder]>", " is working...");
-   }
+   public  Builder() {}
 
    /**
    * This method would to build object actions

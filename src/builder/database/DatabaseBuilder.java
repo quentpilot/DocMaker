@@ -7,7 +7,7 @@
  * @Filename:           DatabaseBuilder.java
  * @Date:               2017-11-07T13:01:28+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T19:52:28+01:00
+ * @Last modified time: 2017-11-09T14:23:53+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -29,7 +29,6 @@
    */
    public            DatabaseBuilder() {
      this.setPaths(new ArrayList<File>());
-     Printer.printag("[@databasebuilder]> ", "Building of database...");
    }
 
    /**
