@@ -7,7 +7,7 @@
  * @Filename:           Entity.java
  * @Date:               2017-11-06T05:00:29+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T15:58:18+01:00
+ * @Last modified time: 2017-11-09T12:08:47+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -31,7 +31,6 @@ public class Entity extends AEngine {
   */
   public          Entity() {
     this.type = "entitybot";
-    this.status = true;
   }
 
   /**
@@ -54,6 +53,7 @@ public class Entity extends AEngine {
   public boolean  run() {
     if (!this.build())
       return false;
+    this.setStatus(true);
     Printer.printag("[@" + this.getType() + "]>", " Entities are built!");
     return true;
   }

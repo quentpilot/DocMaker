@@ -7,7 +7,7 @@
  * @Filename:           ArrayObjectFactory.java
  * @Date:               2017-11-07T13:52:13+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T23:15:37+01:00
+ * @Last modified time: 2017-11-09T12:05:41+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -39,5 +39,33 @@
    */
    public                     ArrayObjectFactory(ALexer data) {
      Printer.printbot("Array objects factory is working...");
+   }
+
+   /**
+   * This method would to build object actions
+   *
+   * @return Success or not
+   *
+   * @see ArrayObjectFactory#run()
+   */
+   public boolean             build() {
+     Printer.printbot("Objects factory is building...");
+     return true;
+   }
+
+   /**
+   * This method would to run main class methods
+   *
+   * @return Success or not
+   *
+   * @see ArrayObjectFactory#build()
+   */
+   public boolean             run() {
+     if (!this.check())
+      return false;
+    if (!this.build())
+      return false;
+    Printer.printbot("Objects factory is running...");
+     return true;
    }
  }
