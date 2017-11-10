@@ -2,37 +2,66 @@
  * @Description:        Object class would to do some stuff
  * @Author:             Quentin Le Bian <quentin>
  * @Email:              quentin.lebian@pilotaweb.fr
- * @Project:            LiveCurrencyConverter
+ * @Project:            DocMaker
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           Engine.java
  * @Date:               2017-11-06T01:21:30+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-06T02:01:29+01:00
+ * @Last modified time: 2017-11-09T15:50:52+01:00
  * @License:            MIT
- * @See:                projects.quentinlebian.fr/LiveCurrencyConverter
+ * @See:                projects.quentinlebian.fr/DocMaker
  */
 
 
 package src.core.engine;
 
 import src.tools.print.*;
+import src.core.engine.*;
+import src.core.engine.builder.*;
 
-public class Engine {
+public class Engine extends AEngine {
+
+  /**
+  * This attribute would to store type of child class to custom actions
+  *
+  * @see Engine#Engine()
+  */
+  protected String  type = "DocMaker";
+
+  /**
+  * This attribute would to store each engine instances
+  *
+  * @see Engine#run()
+  */
+  protected IEngine[]  engine = { null, new Entity(), new Sorter(), new Bootstrap(), null };
 
   /**
   * This attribute would to store final class status
   *
   * @see Engine#Engine()
   */
-  public boolean  status = false;
+  protected boolean  status = false;
 
   /**
   * Main constructor
   *
   * @see Engine#Engine()
   */
-  public Engine(){
-    this.run();
+  public Engine() {
+    this.status = true;
+  }
+
+  /**
+  * Second constructor which would to set some attributes
+  *
+  * @param classname
+  *                   Name of instantiated class to set type attribute
+  *
+  * @see Engine#type
+  */
+  public Engine(String classname) {
+    this.type = classname;
+    this.status = true;
   }
 
   /**
@@ -40,22 +69,95 @@ public class Engine {
   *
   * @see Engine#Engine()
   */
-  protected void run(){}
+  public boolean run() {
+    int   it = 0;
+    for (IEngine factory : this.getEngine()) {
+      if (it > 0 && it < (this.getEngine().length - 1)) {
+        if (it > 2)
+          factory.setEntities(this.getEngine()[it - 1].getEntities());
+        factory.run();
+        if (!factory.getStatus())
+          return false;
+        factory.clean();
+      }
+      it++;
+    }
+    this.result();
+    return true;
+  }
 
   /**
   * Main method to clean temporary data class
   *
   * @see Engine#Engine()
   */
-  protected void clean(){
-    Printer.printbot("DocMaker temporary files have been clean!");
+  public void clean(){
+    this.setStatus(false);
   }
 
   /**
+  * This method would to print result of class we want
+  *
+  * @see Engine#run()
+  */
+  public void result() {
+    Printer.printag("[@" + this.getType() + "]>", " Future result message emplacement when finish to build website documentation!");
+  }
+
+  /**
+  * This method would to return type attribute value
+  *
+  * @return type attribute value
+  *
+  * @see Engine#type
+  */
+  public String getType() { return this.type; }
+
+  /**
+  * This method would to set type attribute value
+  *
+  * @param classname
+  *               value to set
+  *
+  * @see Engine#type
+  */
+  public void setType(String classname) { this.type = classname; }
+
+  /**
+  * This method would to return engine attribute value
+  *
+  * @return engine attribute value
+  *
+  * @see Engine#engine
+  */
+  public IEngine[] getEngine() { return this.engine; }
+
+  /**
+  * This method would to set engine attribute value
+  *
+  * @param instances
+  *               engine to set
+  *
+  * @see Engine#engine
+  */
+  public void setEngine(IEngine[] instances) { this.engine = instances; }
+
+  /**
   * This method would to return status attribute value
+  *
+  * @return status attribute value
   *
   * @see Engine#status
   */
   public boolean getStatus() { return this.status; }
 
+  /**
+  * This method would to set status attribute value
+  *
+  * @param done
+  *               value to set
+  *
+  * @see Engine#status
+  */
+  public void setStatus(boolean done) { this.status = done; }
 }
