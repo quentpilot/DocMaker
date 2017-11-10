@@ -7,7 +7,7 @@
  * @Filename:           TemplateBuilder.java
  * @Date:               2017-11-04T17:46:10+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:00:59+01:00
+ * @Last modified time: 2017-11-10T20:24:58+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/LiveCurrencyConverter
  */
@@ -20,8 +20,7 @@
 
  public class TemplateBuilder extends ATemplate {
 
-  public TemplateBuilder(){
-  }
+  public TemplateBuilder(){}
 
   public TemplateBuilder(ArrayObjectFactory database) {
     this.setEntities(database);

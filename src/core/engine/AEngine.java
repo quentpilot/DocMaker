@@ -7,7 +7,7 @@
  * @Filename:           AEngine.java
  * @Date:               2017-11-06T07:20:03+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T16:54:03+01:00
+ * @Last modified time: 2017-11-10T19:46:11+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -46,7 +46,7 @@ public abstract class AEngine implements IEngine {
   *
   * @see AEngine#AEngine()
   */
-  protected IObjectFactory  entities = new ArrayObjectFactory();
+  protected ArrayObjectFactory  entities = new ArrayObjectFactory();
 
   /**
   * This attribute would to store an instance of Builder
@@ -141,7 +141,7 @@ public abstract class AEngine implements IEngine {
   *
   * @see AEngine#entities
   */
-  public IObjectFactory getEntities() { return this.entities; }
+  public ArrayObjectFactory getEntities() { return this.entities; }
 
   /**
   * This method would to set entity attribute value
@@ -151,7 +151,7 @@ public abstract class AEngine implements IEngine {
   *
   * @see AEngine#entities
   */
-  public void setEntities(IObjectFactory data) { this.entities = data; }
+  public void setEntities(ArrayObjectFactory data) { this.entities = data; }
 
   /**
   * This method would to return builder attribute value

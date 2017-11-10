@@ -7,7 +7,7 @@
  * @Filename:           Bootstrap.java
  * @Date:               2017-11-06T05:21:31+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T17:23:39+01:00
+ * @Last modified time: 2017-11-10T20:22:27+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -39,7 +39,7 @@ public class Bootstrap extends AEngine {
   * @see Bootstrap#run()
   */
   public boolean  build() {
-    this.setBuilder(new BootstrapBuilder());
+    this.setBuilder(new BootstrapBuilder(this.getEntities()));
     this.setEntities(this.getBuilder().getEntities());
     return true;
   }

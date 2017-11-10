@@ -7,7 +7,7 @@
  * @Filename:           IEngine.java
  * @Date:               2017-11-06T05:25:01+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T15:58:11+01:00
+ * @Last modified time: 2017-11-10T19:47:04+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -19,7 +19,7 @@ import java.util.*;
 import java.lang.*;
 import src.core.engine.*;
 import src.builder.*;
-import src.tools.ObjectFactory.resources.*;
+import src.tools.ObjectFactory.array.*;
 
 public interface IEngine {
 
@@ -33,7 +33,7 @@ public interface IEngine {
 
   public boolean  getStatus();
 
-  public IObjectFactory getEntities();
+  public ArrayObjectFactory getEntities();
 
-  public void setEntities(IObjectFactory data);
+  public void setEntities(ArrayObjectFactory data);
 }

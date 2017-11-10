@@ -7,7 +7,7 @@
  * @Filename:           Sorter.java
  * @Date:               2017-11-06T05:20:32+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:20:46+01:00
+ * @Last modified time: 2017-11-10T21:24:27+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -38,7 +38,8 @@ public class Sorter extends AEngine {
   * @see Sorter#run()
   */
   public boolean  build() {
-    this.setBuilder(new SorterBuilder());
+    this.setBuilder(new SorterBuilder(this.getEntities()));
+    this.getBuilder().setEntities(this.getEntities());
     this.setEntities(this.getBuilder().getEntities());
     return true;
   }

@@ -7,7 +7,7 @@
  * @Filename:           EntityBuilder.java
  * @Date:               2017-11-07T12:01:32+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-10T18:24:09+01:00
+ * @Last modified time: 2017-11-10T21:17:47+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -69,6 +69,7 @@
       return false;
     builder = new EntityFactory(this.getLexer().getDump());
     this.setEntities(new ArrayObjectFactory(builder));
+    //this.getEntities().getFactory().listModels();
     return true;
    }
 }

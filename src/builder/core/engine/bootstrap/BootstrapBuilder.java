@@ -7,7 +7,7 @@
  * @Filename:           BootstrapBuilder.java
  * @Date:               2017-11-07T12:02:08+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-10T17:25:48+01:00
+ * @Last modified time: 2017-11-10T20:24:08+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -42,7 +42,6 @@
      super();
      this.setType("bootstrapbuilderbot");
      this.setChecker(new EntityChecker());
-     this.run();
    }
 
    /**
@@ -54,6 +53,18 @@
      super(classname);
      this.setType("bootstrapbuilderbot");
      this.setChecker(new EntityChecker());
+   }
+
+   /**
+   * Second constructor
+   *
+   * @see   BootstrapBuilder#BootstrapBuilder()
+   */
+   public                       BootstrapBuilder(ArrayObjectFactory database) {
+     super();
+     this.setType("bootstrapbuilderbot");
+     this.setChecker(new EntityChecker());
+     this.setEntities(database);
      this.run();
    }
 

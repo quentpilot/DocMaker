@@ -7,7 +7,7 @@
  * @Filename:           AFactory.java
  * @Date:               2017-11-09T22:27:31+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-10T18:21:26+01:00
+ * @Last modified time: 2017-11-10T21:44:30+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -102,9 +102,6 @@
    */
    public boolean             listModel(Model[] list) {
      for (Model template : list) {
-       /*if (template instanceof FileModel)
-        Printer.echo(template.getFilepath());
-       if (template instanceof DirectoryModel)*/
        if (template != null)
         Printer.echo(template.getFilepath());
      }
@@ -117,10 +114,6 @@
    * @see ObjectFactory#run()
    */
    public boolean             listModels() {
-
-     /*for (int it = 0; it < list.size(); it++) {
-       Printer.echo(list.get(it).toString());
-     }*/
      ArrayList<Model> list = this.getModels();
      for (Model template : list) {
        Printer.echo(template.toString());

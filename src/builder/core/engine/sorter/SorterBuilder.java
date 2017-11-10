@@ -7,7 +7,7 @@
  * @Filename:           SorterBuilder.java
  * @Date:               2017-11-07T12:03:15+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-10T17:26:02+01:00
+ * @Last modified time: 2017-11-10T22:01:07+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -22,6 +22,7 @@
  import src.tools.lexer.*;
  import src.tools.lexer.resources.*;
  import src.tools.ObjectFactory.array.*;
+ import src.tools.ObjectFactory.factory.*;
  import src.builder.core.engine.sorter.Sort;
  import src.builder.entity.resources.models.Model;
 
@@ -58,6 +59,19 @@
    }
 
    /**
+   * Second constructor
+   *
+   * @see   SorterBuilder#SorterBuilder()
+   */
+   public                       SorterBuilder(ArrayObjectFactory database) {
+     super();
+     this.setType("sorterbuilderbot");
+     this.setChecker(new EntityChecker());
+     this.setEntities(database);
+     this.run();
+   }
+
+   /**
    * This method would to build object actions
    *
    * @return Success or not
@@ -65,9 +79,15 @@
    * @see  SorterBuilder#run()
    */
    public boolean             build() {
-      this.setSort(new Sort());
-      this.setLexer(this.getSort().getLexer());
-      //this.setEntities(new ArrayObjectFactory(this.getLexer()));
+      Factory  builder = new SorterFactory();
+
+      // build models with content file data from format
+      this.setSort(new Sort(this.getEntities()));
+      this.setEntities(this.getSort().getFactory());
+      //this.getEntities().getFactory().listModels();
+      // create new object array model with file data
+      builder = new SorterFactory(this.getEntities().getFactory().getModels());
+      this.getEntities().setFactory(builder);
       return true;
    }
 

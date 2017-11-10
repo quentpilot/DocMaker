@@ -4,10 +4,10 @@
  * @Email:              quentin.lebian@pilotaweb.fr
  * @Project:            DocMaker
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
- * @Filename:           EntityFactory.java
- * @Date:               2017-11-09T23:05:02+01:00
+ * @Filename:           FilerFactory.java
+ * @Date:               2017-11-10T21:54:25+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-10T20:22:02+01:00
+ * @Last modified time: 2017-11-10T21:56:31+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -25,15 +25,15 @@
  import src.builder.entity.resources.models.factory.*;
  import src.builder.entity.resources.models.filer.DatabaseFiler;
 
- public class EntityFactory extends Factory {
+ public class FilerFactory extends Factory {
 
-   public EntityFactory() {
+   public FilerFactory() {
      super();
    }
 
-   public EntityFactory(ArrayList<File> files) {
+   public FilerFactory(ArrayList<Model> files) {
      super();
-     this.setFiles(files);
+     this.setModels(files);
      this.run();
    }
 
@@ -60,23 +60,6 @@
    * @see ObjectFactory#scan()
    */
    protected boolean             scan(String folder) {
-     File     directory = new File(folder);
-     File[]   files = directory.listFiles();
-
-     for (File file : files) {
-       String   path = folder;
-       if (file.isDirectory()) {
-         Model entity = new Model(this.merge(new DirectoryModel(), file));
-         this.getModels().add(entity);
-         path = path + "/" + file.getName();
-         this.scan(path);
-      }
-      else {
-        Model entity = new Model(this.merge(new FileModel(), file));
-        entity.setFilepath(file.getName());
-        this.getModels().add(entity);
-      }
-     }
      return true;
    }
 
@@ -88,19 +71,6 @@
    * @see ObjectFactory#scan()
    */
    protected Model             merge(Model template, File file) {
-     if (template instanceof DirectoryModel) {
-       template.setType(file.getName());
-       template.setDirpath(file.getAbsolutePath());
-       template.setFilepath("/");
-       template.setFormat("rep");
-       template.setIterator(this.getIterator());
-     }
-     if (template instanceof FileModel) {
-       template.setType(file.getParentFile().getName());
-       template.setDirpath(file.getAbsolutePath());
-       template.setFilepath(file.getName());
-       template.setIterator(this.getIterator());
-     }
      return template;
    }
-}
+ }

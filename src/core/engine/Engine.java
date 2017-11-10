@@ -7,7 +7,7 @@
  * @Filename:           Engine.java
  * @Date:               2017-11-06T01:21:30+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T15:50:52+01:00
+ * @Last modified time: 2017-11-10T20:18:41+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -73,7 +73,7 @@ public class Engine extends AEngine {
     int   it = 0;
     for (IEngine factory : this.getEngine()) {
       if (it > 0 && it < (this.getEngine().length - 1)) {
-        if (it > 2)
+        if (it >= 2)
           factory.setEntities(this.getEngine()[it - 1].getEntities());
         factory.run();
         if (!factory.getStatus())
