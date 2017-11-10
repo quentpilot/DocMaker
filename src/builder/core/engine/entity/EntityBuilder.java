@@ -7,7 +7,7 @@
  * @Filename:           EntityBuilder.java
  * @Date:               2017-11-07T12:01:32+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:22:18+01:00
+ * @Last modified time: 2017-11-10T18:24:09+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -22,6 +22,7 @@
  import src.tools.lexer.*;
  import src.tools.lexer.resources.*;
  import src.tools.ObjectFactory.array.*;
+ import src.tools.ObjectFactory.factory.*;
  import src.builder.entity.resources.models.Model;
 
  public class EntityBuilder extends Builder {
@@ -59,12 +60,15 @@
    * @see EntityBuilder#run()
    */
    public boolean             build() {
+     Factory builder = new EntityFactory();
+
     if (!this.getDatabases()[0].load())
       return false;
     this.setLexer(new Lexer(this.getDatabases()[0].getPaths()));
     if (!this.getLexer().run())
       return false;
-    this.setEntities(new ArrayObjectFactory(this.getLexer()));
-     return true;
+    builder = new EntityFactory(this.getLexer().getDump());
+    this.setEntities(new ArrayObjectFactory(builder));
+    return true;
    }
 }

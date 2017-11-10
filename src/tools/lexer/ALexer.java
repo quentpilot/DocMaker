@@ -7,7 +7,7 @@
  * @Filename:           ALexer.java
  * @Date:               2017-11-07T16:38:47+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T19:26:08+01:00
+ * @Last modified time: 2017-11-09T20:15:14+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -17,6 +17,7 @@
 
  import java.util.ArrayList;
  import java.io.File;
+ import src.builder.entity.resources.models.Model;
  import src.tools.lexer.resources.*;
 
  public abstract class ALexer implements ILexer {
@@ -34,6 +35,13 @@
    * @see ALexer#run()
    */
    protected String format = "json";
+
+   /**
+   * This attribute would to store Model instance
+   *
+   * @see ALexer#run()
+   */
+   protected Model model = new Model();
 
    /**
    * This method would to build object actions
@@ -116,4 +124,23 @@
    public void setFormat(String type) {
      this.format = type;
    }
+
+   /**
+   * This method would to return model attribute
+   *
+   * @return model value
+   *
+   * @see ALexer#model
+   */
+   public Model         getModel() { return this.model; }
+
+   /**
+   * This method would to set model attribute
+   *
+   * @param entity
+   *              model value to store
+   *
+   * @see ALexer#model
+   */
+   public void          setModel(Model entity) { this.model = entity; }
  }

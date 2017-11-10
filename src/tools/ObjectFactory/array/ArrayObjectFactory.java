@@ -7,7 +7,7 @@
  * @Filename:           ArrayObjectFactory.java
  * @Date:               2017-11-07T13:52:13+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:23:13+01:00
+ * @Last modified time: 2017-11-10T18:18:34+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -15,10 +15,13 @@
 
  package src.tools.ObjectFactory.array;
 
+ import java.util.ArrayList;
+ import java.io.File;
  import src.tools.print.*;
  import src.tools.lexer.*;
  import src.tools.ObjectFactory.*;
  import src.tools.ObjectFactory.sort.*;
+ import src.tools.ObjectFactory.factory.*;
  import src.builder.entity.resources.models.*;
 
  public class ArrayObjectFactory extends ObjectFactory {
@@ -35,7 +38,30 @@
    *
    * @see ObjectFactory#ObjectFactory()
    */
-   public                     ArrayObjectFactory(ALexer data) {}
+   public                     ArrayObjectFactory(ALexer data) {
+     this.setLexer(data);
+     this.run();
+   }
+
+   /**
+   * Model builder constructor
+   *
+   * @see ObjectFactory#ObjectFactory()
+   */
+   public                     ArrayObjectFactory(ALexer data, AFactory builder) {
+     this.setLexer(data);
+     this.setFactory(builder);
+     this.run();
+   }
+
+   /**
+   * Model builder constructor
+   *
+   * @see ObjectFactory#ObjectFactory()
+   */
+   public                     ArrayObjectFactory(AFactory builder) {
+     this.setFactory(builder);
+   }
 
    /**
    * This method would to build object actions
@@ -45,6 +71,7 @@
    * @see ArrayObjectFactory#run()
    */
    public boolean             build() {
+     this.setFactory(new EntityFactory(this.getLexer().getDump()));
      return true;
    }
 

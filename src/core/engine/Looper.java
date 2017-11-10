@@ -7,7 +7,7 @@
  * @Filename:           Looper.java
  * @Date:               2017-11-05T23:16:29+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:32:41+01:00
+ * @Last modified time: 2017-11-09T14:37:31+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -16,8 +16,7 @@
 package src.core.engine;
 
 import src.tools.print.*;
-import src.core.engine.runner.ApplicationRunner;
-import src.core.engine.runner.CheckRunner;
+import src.core.engine.runner.*;
 
 public class Looper { // or Loopyloop, Youpiloop, DocMaker, DokMacer, DocDoc,...
 

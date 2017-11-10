@@ -7,7 +7,7 @@
  * @Filename:           ObjectFactory.java
  * @Date:               2017-11-07T13:52:23+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:23:41+01:00
+ * @Last modified time: 2017-11-09T22:43:10+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -17,10 +17,20 @@
 
  import src.tools.ObjectFactory.resources.IObjectFactory;
  import src.tools.ObjectFactory.sort.*;
+ import src.tools.ObjectFactory.factory.*;
  import src.tools.print.*;
  import src.tools.check.*;
+ import src.tools.lexer.*;
 
  public class ObjectFactory implements IObjectFactory {
+
+   /**
+   * This attribute would to store an instance
+   * of Factory class
+   *
+   * @see ObjectFactory#build()
+   */
+   public AFactory          factory = new Factory();
 
    /**
    * This attribute would to store an instance
@@ -29,6 +39,13 @@
    * @see ObjectFactory#build()
    */
    public SortObjectFactory   sorter = new SortObjectFactory();
+
+   /**
+   * This attribute would to store an instance of Lexer
+   *
+   * @see ObjectFactory#ObjectFactory()
+   */
+   protected ALexer            lexer = new Lexer();
 
    /**
    * This attribute would to store an instance of Checker
@@ -91,6 +108,25 @@
    }
 
    /**
+   * This method would to return factory attribute
+   *
+   * @return factory attribute value
+   *
+   * @see ObjectFactory#factory
+   */
+   public AFactory   getFactory() { return this.factory; }
+
+   /**
+   * This method would to set factory attribute
+   *
+   * @param of
+   *             would to be an instance of Factory class
+   *
+   * @see ObjectFactory#factory
+   */
+   public void                setFactory(AFactory of) { this.factory = of; }
+
+   /**
    * This method would to return sorter attribute
    *
    * @return sorter attribute value
@@ -108,6 +144,25 @@
    * @see ObjectFactory#sorter
    */
    public void                setSorter(SortObjectFactory sort) { this.sorter = sort; }
+
+   /**
+   * This method would to return lexer attribute
+   *
+   * @return lexer attribute value
+   *
+   * @see ObjectFactory#lexer
+   */
+   public ALexer               getLexer() { return this.lexer; }
+
+   /**
+   * This method would to set lexer attribute
+   *
+   * @param data
+   *             would to be an instance of Lexer class
+   *
+   * @see ObjectFactory#lexer
+   */
+   public void                setLexer(ALexer data) { this.lexer = data; }
 
    /**
    * This method would to return checker attribute value

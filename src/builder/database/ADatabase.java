@@ -7,7 +7,7 @@
  * @Filename:           ADatabase.java
  * @Date:               2017-11-08T12:18:09+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T19:54:53+01:00
+ * @Last modified time: 2017-11-09T18:44:09+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -15,12 +15,25 @@
 
  package src.builder.database;
 
- import java.util.*;
- import java.io.*;
+ import java.util.ArrayList;
+ import java.io.File;
  import src.builder.database.*;
  import src.builder.database.resources.*;
+ import src.tools.lexer.*;
+ import src.tools.lexer.scan.*;
+ import src.tools.lexer.file.*;
 
  public abstract class ADatabase implements IDatabase {
+
+   /**
+   * This attribute would to store an instance of Scanner
+   */
+   public ALexer            lexer = new Scanner();
+
+   /**
+   * This attribute would to store an instance of Filer
+   */
+   public ALexer            filer = new Filer();
 
    /**
    * This attribute would to store list of well parsed files
@@ -128,4 +141,42 @@
    * @see ADatabase#paths
    */
    public void  setPaths(ArrayList<File> list) { this.paths = list; }
+
+   /**
+   * This method would to return lexer attribute value
+   *
+   * @return lexer attribute value
+   *
+   * @see ADatabase#lexer
+   */
+   public ALexer getLexer() { return this.lexer; }
+
+   /**
+   * This method would to set lexer attribute value
+   *
+   * @param data
+   *               value to set
+   *
+   * @see ADatabase#lexer
+   */
+   public void  setLexer(ALexer data) { this.lexer = data; }
+
+   /**
+   * This method would to return filer attribute value
+   *
+   * @return filer attribute value
+   *
+   * @see ADatabase#filer
+   */
+   public ALexer getFiler() { return this.filer; }
+
+   /**
+   * This method would to set filer attribute value
+   *
+   * @param data
+   *               value to set
+   *
+   * @see ADatabase#filer
+   */
+   public void  setFiler(ALexer data) { this.filer = data; }
  }

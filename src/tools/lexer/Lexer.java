@@ -7,7 +7,7 @@
  * @Filename:           Lexer.java
  * @Date:               2017-11-07T16:38:55+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:24:09+01:00
+ * @Last modified time: 2017-11-09T22:13:51+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
