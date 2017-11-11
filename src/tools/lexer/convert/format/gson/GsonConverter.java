@@ -7,7 +7,7 @@
  * @Filename:           GsonConverter.java
  * @Date:               2017-11-11T13:20:33+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-11T20:53:00+01:00
+ * @Last modified time: 2017-11-11T23:12:07+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -17,7 +17,9 @@ package src.tools.lexer.convert.format.gson;
 
 import java.lang.InstantiationException;
 import java.lang.reflect.*;
+import java.io.BufferedReader;
 import src.tools.print.*;
+import src.tools.lexer.write.*;
 import src.tools.lexer.convert.format.gson.*;
 import src.builder.entity.resources.models.tree.*;
 import src.builder.entity.resources.models.filer.*;
@@ -30,6 +32,8 @@ public class GsonConverter implements IConverter {
   protected Format      fileformat = null;
 
   protected Class       fileclass = null;
+
+  protected BufferedReader    filecontent = null;
 
   protected String      result = null;
 
@@ -44,8 +48,15 @@ public class GsonConverter implements IConverter {
     this.run();
   }
 
-  public GsonConverter(Format file) {
-    this.setFileformat(file);
+  public GsonConverter(FilerModel file, BufferedReader content) {
+    this.setFileinfo(file);
+    this.setFilecontent(content);
+    this.run();
+  }
+
+  public GsonConverter(FilerModel file, Format content) {
+    this.setFileinfo(file);
+    this.setFileformat(content);
     this.run();
   }
 
@@ -59,12 +70,15 @@ public class GsonConverter implements IConverter {
     if (this.getFileinfo() != null) {
       String  classname = this.getFileinfo().getType();
       Class   file = classname.getClass();
+
       this.setFileclass(file);
       this.toObject(file);
-    } else if (this.getFileformat() != null) {
+      return true;
+    } else if (this.getFileinfo() != null && this.getFileformat() != null) {
       this.toFormat(this.getFileformat());
+      return true;
     }
-    return true;
+    return false;
   }
 
   public void toFormat(Format classname) {
@@ -75,6 +89,9 @@ public class GsonConverter implements IConverter {
 
   public void toObject(Class classname) {
     this.getRead().setFormat(classname);
+    this.getRead().setContent(this.getFilecontent());
+    Writer w = new Writer(this.getFilecontent());
+    w.write();
     this.getRead().convert();
     this.setFileformat(this.getRead().getResult());
   }
@@ -90,6 +107,10 @@ public class GsonConverter implements IConverter {
   public Class getFileclass() { return this.fileclass; }
 
   public void setFileclass(Class data) { this.fileclass = data; }
+
+  public BufferedReader getFilecontent() {  return this.filecontent; }
+
+  public void setFilecontent(BufferedReader data) { this.filecontent = data; }
 
   public String getResult() {  return this.result; }
 

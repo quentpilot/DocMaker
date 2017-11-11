@@ -7,7 +7,7 @@
  * @Filename:           CDatabase.java
  * @Date:               2017-11-11T00:04:46+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-11T19:21:53+01:00
+ * @Last modified time: 2017-11-11T21:08:51+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -30,6 +30,4 @@ public class CDatabase {
   public CDatabase() {
     System.out.println("CDatabase built!");
   }
-
-  public getData() { return this.name; }
 }

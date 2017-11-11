@@ -7,7 +7,7 @@
  * @Filename:           Writer.java
  * @Date:               2017-11-05T23:26:45+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-11T17:49:16+01:00
+ * @Last modified time: 2017-11-11T23:02:51+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/LiveCurrencyConverter
  */
@@ -48,6 +48,15 @@
    */
    public Writer() {}
 
+     /**
+     * Main constructor
+     *
+     * @see Writer#Writer()
+     */
+     public Writer(BufferedReader data) {
+       this.getReader().setStream(data);
+     }
+
    /**
    * Second constructor
    *
@@ -79,6 +88,7 @@
        try {
          FileWriter      fw = new FileWriter(new File(this.getFilename()));
          BufferedWriter  file = new BufferedWriter(fw);
+
          this.setStream(file);
        } catch(IOException io) {
          io.printStackTrace();
@@ -100,9 +110,9 @@
     */
     public boolean    write() {
       String line = null;
+
     	if (this.getReader().getStream() == null)
         return false;
-
       try {
         while ((line = this.getReader().getStream().readLine()) != null) {
           if (this.getStream() != null)

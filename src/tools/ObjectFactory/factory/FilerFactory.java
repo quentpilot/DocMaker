@@ -7,7 +7,7 @@
  * @Filename:           FilerFactory.java
  * @Date:               2017-11-10T21:54:25+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-11T17:05:54+01:00
+ * @Last modified time: 2017-11-11T23:08:09+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -69,6 +69,10 @@
      Scanner    scan = new Scanner(infos);
 
      this.setConverter(new Converter(scan));
+
+     //if (this.getConverter().getResults().getToWrite() != null)
+      //Printer.echo("Nice result!");
+
      return true;
    }
 

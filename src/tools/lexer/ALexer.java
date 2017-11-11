@@ -7,7 +7,7 @@
  * @Filename:           ALexer.java
  * @Date:               2017-11-07T16:38:47+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-11T17:26:40+01:00
+ * @Last modified time: 2017-11-11T22:18:05+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -19,6 +19,7 @@
  import java.io.File;
  import src.builder.entity.resources.models.Model;
  import src.builder.entity.resources.models.filer.FilerModel;
+ import src.tools.lexer.convert.*;
  import src.tools.lexer.resources.*;
  import src.tools.lexer.read.*;
 
@@ -50,6 +51,8 @@
    protected FilerModel  fileinfo = null;
 
    protected String      filename = null;
+
+   protected ResultConverter results = null;
 
    /**
    * This method would to build object actions
@@ -163,4 +166,8 @@
    public String  getFilename() { return this.filename; }
 
    public void  setFilename(String info) { this.filename = info; }
+
+   public ResultConverter getResults() { return this.results; }
+
+   public void setResults(ResultConverter tool) { this.results = tool; }
  }

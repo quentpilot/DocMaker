@@ -7,7 +7,7 @@
  * @Filename:           GsonReader.java
  * @Date:               2017-11-11T19:28:29+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-11T20:45:36+01:00
+ * @Last modified time: 2017-11-11T22:51:24+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -15,6 +15,7 @@
 
  package src.tools.lexer.convert.format.gson;
 
+ import java.io.BufferedReader;
  import src.tools.lexer.convert.resources.*;
  import src.builder.entity.resources.models.tree.*;
 
@@ -23,6 +24,8 @@
     protected Class format = null;
 
     protected Format result = null;
+
+    protected BufferedReader content = null;
 
     public GsonReader() {}
 
@@ -41,4 +44,8 @@
     public Format getResult() {  return this.result; }
 
     public void setResult(Format data) { this.result = data; }
+
+    public BufferedReader getContent() {  return this.content; }
+
+    public void setContent(BufferedReader data) { this.content = data; }
  }
