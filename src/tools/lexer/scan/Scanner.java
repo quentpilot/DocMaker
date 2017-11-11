@@ -7,7 +7,7 @@
  * @Filename:           Scanner.java
  * @Date:               2017-11-09T16:43:31+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-10T23:11:43+01:00
+ * @Last modified time: 2017-11-11T17:26:23+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -18,18 +18,20 @@ package src.tools.lexer.scan;
 import java.util.ArrayList;
 import java.io.File;
 import src.tools.print.*;
-import src.tools.print.*;
 import src.tools.lexer.*;
+import src.tools.lexer.read.*;
+import src.tools.lexer.write.*;
 import src.tools.lexer.file.*;
 import src.builder.entity.resources.models.filer.*;
 
 public class Scanner extends ALexer {
 
-  protected FilerModel  fileinfo = null;
-
   public Scanner(){}
 
-  public Scanner(String filename) {}
+  public Scanner(String filename) {
+    this.setFilename(filename);
+    this.run();
+  }
 
     public Scanner(FilerModel file) {
       this.setFileinfo(file);
@@ -46,20 +48,19 @@ public class Scanner extends ALexer {
   *
   * @return Success or not
   *
-  * @see Writer#run()
+  * @see Scanner#run()
   */
   public boolean build() {
-    if (this.getFileinfo() != null) {
-      //Printer.echo(this.getFileinfo().getFormat());
-      // read and store file content
+    if (this.getFilename() != null) {
+      if (!this.read())
+        return false;
+    }
+    else if (this.getFileinfo() != null) {
+      if (!this.scanFiler())
+        return false;
     } else {
-      String  folder = this.getModel().getDirpath();
-      String  file = this.getModel().getFilepath();
-
-      if (file == null || file.equals("/")) {
-        if (!this.scan(folder))
-          return false;
-      }
+      if (!this.scanLexer())
+        return false;
     }
     return true;
   }
@@ -69,7 +70,53 @@ public class Scanner extends ALexer {
   *
   * @return Success or not
   *
-  * @see Writer#build()
+  * @see Scanner#build()
+  */
+  protected boolean read() {
+    if (this.getFilename() == null)
+      return false;
+    this.setReader(new Reader(this.getFilename()));
+    return true;
+  }
+
+  /**
+  * This method would to scan directory from object model attributes
+  *
+  * @return Success or not
+  *
+  * @see Scanner#build()
+  */
+  protected boolean scanFiler() {
+    String path = this.getFileinfo().getDirpath() + this.getFileinfo().getFilepath();
+    this.setFilename(path);
+    this.read();
+    return true;
+  }
+
+  /**
+  * This method would to scan directory from object model attributes
+  *
+  * @return Success or not
+  *
+  * @see Scanner#build()
+  */
+  protected boolean scanLexer() {
+    String  folder = this.getModel().getDirpath();
+    String  file = this.getModel().getFilepath();
+
+    if (file == null || file.equals("/")) {
+      if (!this.scan(folder))
+        return false;
+    }
+    return true;
+  }
+
+  /**
+  * This method would to scan directory from object model attributes
+  *
+  * @return Success or not
+  *
+  * @see Scanner#build()
   */
   protected boolean scan(String folder) {
     File    directory = new File(folder);
@@ -88,8 +135,4 @@ public class Scanner extends ALexer {
     }
     return true;
   }
-
-  public FilerModel    getFileinfo() { return this.fileinfo; }
-
-  public void         setFileinfo(FilerModel info) { this.fileinfo = info; }
 }

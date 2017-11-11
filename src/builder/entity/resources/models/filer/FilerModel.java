@@ -7,7 +7,7 @@
  * @Filename:           FilerModel.java
  * @Date:               2017-11-09T18:48:02+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T21:14:34+01:00
+ * @Last modified time: 2017-11-11T16:18:57+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -22,11 +22,22 @@
    /**
    * Main constructor
    *
-   * @see Model#Model(
+   * @see Model#Model()
    )
    */
    public FilerModel() {
      super();
      this.setType("filermodel#" + this.id);
+   }
+
+   /**
+   * Second constructor
+   *
+   * @see Model#Model()
+   )
+   */
+   public FilerModel(String name) {
+     super();
+     this.setType(name);
    }
  }

@@ -7,7 +7,7 @@
  * @Filename:           ALexer.java
  * @Date:               2017-11-07T16:38:47+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T20:15:14+01:00
+ * @Last modified time: 2017-11-11T17:26:40+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -18,7 +18,9 @@
  import java.util.ArrayList;
  import java.io.File;
  import src.builder.entity.resources.models.Model;
+ import src.builder.entity.resources.models.filer.FilerModel;
  import src.tools.lexer.resources.*;
+ import src.tools.lexer.read.*;
 
  public abstract class ALexer implements ILexer {
 
@@ -42,6 +44,12 @@
    * @see ALexer#run()
    */
    protected Model model = new Model();
+
+   protected Reader reader = null;
+
+   protected FilerModel  fileinfo = null;
+
+   protected String      filename = null;
 
    /**
    * This method would to build object actions
@@ -132,7 +140,7 @@
    *
    * @see ALexer#model
    */
-   public Model         getModel() { return this.model; }
+   public Model getModel() { return this.model; }
 
    /**
    * This method would to set model attribute
@@ -142,5 +150,17 @@
    *
    * @see ALexer#model
    */
-   public void          setModel(Model entity) { this.model = entity; }
+   public void  setModel(Model entity) { this.model = entity; }
+
+   public Reader  getReader() { return this.reader; }
+
+   public void  setReader(Reader info) { this.reader = info; }
+
+   public FilerModel  getFileinfo() { return this.fileinfo; }
+
+   public void  setFileinfo(FilerModel info) { this.fileinfo = info; }
+
+   public String  getFilename() { return this.filename; }
+
+   public void  setFilename(String info) { this.filename = info; }
  }

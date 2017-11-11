@@ -6,7 +6,7 @@
 # @Filename:            clear.sh
 # @Date:                2017-11-04T18:18:19+01:00
 # @Last modified by:    quentin
-# @Last modified time:  2017-11-10T18:40:07+01:00
+# @Last modified time:  2017-11-11T20:56:56+01:00
 # @License:             MIT
 # @See:                 projects.quentinlebian.fr/LiveCurrencyConverter
 
@@ -23,11 +23,14 @@ rm -r src/builder/database/resources/*.class
 rm -r src/builder/entity/resources/models/*.class
 rm -r src/builder/entity/resources/models/filer/*.class
 rm -r src/builder/entity/resources/models/factory/*.class
+rm -r src/builder/entity/resources/models/tree/*.class
 rm -r src/builder/templates/*.class
 rm -r src/tools/check/*.class
 rm -r src/tools/print/*.class
 rm -r src/tools/lexer/*.class
 rm -r src/tools/lexer/*/**.class
+rm -r src/tools/lexer/convert/*/**.class
+rm -r src/tools/lexer/convert/format/*/**.class
 rm -r src/tools/ObjectFactory/*.class
 rm -r src/tools/ObjectFactory/*/**.class
 rm -r src/tools/ResourcesManager/*.class

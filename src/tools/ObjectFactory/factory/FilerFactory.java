@@ -7,7 +7,7 @@
  * @Filename:           FilerFactory.java
  * @Date:               2017-11-10T21:54:25+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-10T21:56:31+01:00
+ * @Last modified time: 2017-11-11T17:05:54+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -19,13 +19,19 @@
  import java.io.File;
  import src.tools.print.*;
  import src.tools.ObjectFactory.factory.*;
+ import src.tools.lexer.*;
  import src.tools.lexer.file.*;
  import src.tools.lexer.scan.*;
+ import src.tools.lexer.write.*;
+ import src.tools.lexer.convert.*;
  import src.builder.entity.resources.models.*;
+ import src.builder.entity.resources.models.filer.*;
  import src.builder.entity.resources.models.factory.*;
  import src.builder.entity.resources.models.filer.DatabaseFiler;
 
  public class FilerFactory extends Factory {
+
+   protected ALexer converter = new Converter();
 
    public FilerFactory() {
      super();
@@ -45,10 +51,10 @@
    * @see ObjectFactory#run()
    */
    public boolean             build() {
-     DatabaseFiler info = new DatabaseFiler();
+     FilerModel  info = new DatabaseFiler("CDatabase");
 
      this.setIterator(0);
-     this.scan(info.getDirpath());
+     this.scan(info);
      return true;
    }
 
@@ -59,7 +65,10 @@
    *
    * @see ObjectFactory#scan()
    */
-   protected boolean             scan(String folder) {
+   protected boolean             scan(FilerModel infos) {
+     Scanner    scan = new Scanner(infos);
+
+     this.setConverter(new Converter(scan));
      return true;
    }
 
@@ -73,4 +82,8 @@
    protected Model             merge(Model template, File file) {
      return template;
    }
+
+   public ALexer              getConverter() { return this.converter; }
+
+   public void                setConverter(ALexer tool) { this.converter = tool; }
  }
