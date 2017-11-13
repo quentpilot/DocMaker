@@ -7,7 +7,7 @@
  * @Filename:           Format.java
  * @Date:               2017-11-11T18:06:18+01:00
  * @Last modified by:   quentin
- * @Last modified time: 2017-11-11T18:28:06+01:00
+ * @Last modified time: 2017-11-13T17:50:57+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -17,15 +17,15 @@
 
  public class Format {
 
-   protected String name = null;
+   public String name = "Format";
 
-   protected String login = null;
+   public String login = null;
 
-   protected String pass = null;
+   public String pass = null;
 
-   protected String tables = null;
+   public String tables = null;
 
-   protected boolean status = false;
+   public boolean status = false;
 
    public Format() {}
  }

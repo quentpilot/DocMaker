@@ -6,10 +6,10 @@
 # @Filename:            make.sh
 # @Date:                2017-11-04T17:10:39+01:00
 # @Last modified by:    quentin
-# @Last modified time:  2017-11-09T13:13:00+01:00
+# @Last modified time:  2017-11-13T17:40:41+01:00
 # @License:             MIT
 # @See:                 projects.quentinlebian.fr/LiveCurrencyConverter
 
 
-javac src/core/Index.java src/core/engine/runner/*.java src/tools/ObjectFactory/sort/*.java src/builder/core/engine/sorter/*.java
-java src.core.Index
+javac -cp '.:resources/lib/jar/json/gson-2.8.0.jar' src/core/Index.java src/core/engine/runner/*.java src/tools/ObjectFactory/sort/*.java src/builder/core/engine/sorter/*.java
+java -cp '.:resources/lib/jar/json/gson-2.8.0.jar' src.core.Index
