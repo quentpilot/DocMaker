@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /**
  * @Description:        Object class would to do some stuff
  * @Author:             Quentin Le Bian <quentin>
@@ -66,4 +67,11 @@ public class Printer {
     String  pnj = "[@bot]> " + msg;
     System.out.println(pnj);
   }
+=======
+package tools.print;
+
+public class Printer {
+
+	public Printer( ) {}
+>>>>>>> java-lang
 }
