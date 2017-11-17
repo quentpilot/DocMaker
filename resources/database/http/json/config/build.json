@@ -1,0 +1,13 @@
+{
+	"title" : "DocMaker",
+	"author": [
+	"Quentin Le Bian"
+	],
+	"contact": "quentin.lebian@pilotaweb",
+	"tables": [
+	"pages",
+	"menu",
+	"articles,
+	"items"
+	]
+}
