@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           AEngine.java
  * @Date:               2017-11-06T07:20:03+01:00
- * @Last modified by:   quentin
- * @Last modified time: 2017-11-08T16:54:03+01:00
+ * @Last modified by:   quentpilot
+ * @Last modified time: 2017-11-07T09:22:02+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -16,16 +16,11 @@
 package src.core.engine;
 
 import java.util.*;
-import java.lang.*;
 import src.tools.print.*;
-import src.tools.check.*;
 import src.builder.*;
 import src.core.engine.IEngine;
-import src.tools.ObjectFactory.*;
-import src.tools.ObjectFactory.resources.*;
-import src.tools.ObjectFactory.array.*;
 
-public abstract class AEngine implements IEngine {
+public class AEngine implements IEngine {
 
   /**
   * This attribute would to store type of child class to custom actions
@@ -42,11 +37,11 @@ public abstract class AEngine implements IEngine {
   protected boolean  status = false;
 
   /**
-  * This attribute would to store entities data
+  * This attribute would to store final entities data
   *
   * @see AEngine#AEngine()
   */
-  protected IObjectFactory  entities = new ArrayObjectFactory();
+  protected ArrayList<Builder>  entities = new ArrayList<Builder>();
 
   /**
   * This attribute would to store an instance of Builder
@@ -56,25 +51,18 @@ public abstract class AEngine implements IEngine {
   protected Builder  builder = new Builder();
 
   /**
-  * This attribute would to store an instance of Checker
-  *
-  * @see AEngine#AEngine()
-  */
-  protected Checker  checker = new EngineChecker();
-
-  /**
   * This method to build data
   *
   * @see AEngine#AEngine()
   */
-  public boolean build() { return false; }
+  public boolean build(){ return false; }
 
   /**
   * Main method to run class
   *
   * @see AEngine#AEngine()
   */
-  public boolean run() {
+  public boolean run(){
     if (!this.build())
       return false;
     return true;
@@ -86,15 +74,6 @@ public abstract class AEngine implements IEngine {
   * @see AEngine#AEngine()
   */
   public void clean(){}
-
-  /**
-  * Main method to check actions
-  *
-  * @see AEngine#run()
-  */
-  public boolean check() {
-    return true;
-  }
 
   /**
   * This method would to return type attribute value
@@ -141,17 +120,17 @@ public abstract class AEngine implements IEngine {
   *
   * @see AEngine#entities
   */
-  public IObjectFactory getEntities() { return this.entities; }
+  public ArrayList<Builder> getEntities() { return this.entities; }
 
   /**
   * This method would to set entity attribute value
   *
-  * @param data
+  * @param done
   *               value to set
   *
   * @see AEngine#entities
   */
-  public void setEntities(IObjectFactory data) { this.entities = data; }
+  public void setEntities(ArrayList<Builder> data) { this.entities = data; }
 
   /**
   * This method would to return builder attribute value
@@ -165,29 +144,10 @@ public abstract class AEngine implements IEngine {
   /**
   * This method would to set builder attribute value
   *
-  * @param data
+  * @param done
   *               value to set
   *
   * @see AEngine#builder
   */
   public void setBuilder(Builder data) { this.builder = data; }
-
-  /**
-  * This method would to return checker attribute value
-  *
-  * @return checker attribute value
-  *
-  * @see AEngine#checker
-  */
-  public Checker getChecker() { return this.checker; }
-
-  /**
-  * This method would to set checker attribute value
-  *
-  * @param data
-  *               value to set
-  *
-  * @see AEngine#checker
-  */
-  public void setChecker(Checker data) { this.checker = data; }
 }

@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           Bootstrap.java
  * @Date:               2017-11-06T05:21:31+01:00
- * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T17:23:39+01:00
+ * @Last modified by:   quentpilot
+ * @Last modified time: 2017-11-06T09:30:52+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -18,8 +18,6 @@ package src.core.engine.builder;
 import java.util.*;
 import src.tools.print.*;
 import src.core.engine.AEngine;
-import src.builder.*;
-import src.builder.core.engine.bootstrap.*;
 
 public class Bootstrap extends AEngine {
 
@@ -28,7 +26,7 @@ public class Bootstrap extends AEngine {
   *
   * @see Bootstrap#Bootstrap()
   */
-  public          Bootstrap() {
+  public          Bootstrap(){
     this.type = "bootstrapbot";
     this.status = true;
   }
@@ -39,35 +37,28 @@ public class Bootstrap extends AEngine {
   * @see Bootstrap#run()
   */
   public boolean  build() {
-    this.setBuilder(new BootstrapBuilder());
-    this.setEntities(this.getBuilder().getEntities());
+    Printer.printag("[@" + this.getType() + "]>", " Working on website building...");
     return true;
   }
 
   /**
-  * This method would to run class
+  * Main method would to run class
   *
   * @see Bootstrap#Bootstrap()
   */
   public boolean  run() {
     if (!this.build())
       return false;
+    Printer.printag("[@" + this.getType() + "]>", " Merging entities in template...");
     return true;
   }
 
   /**
-  * This method would to clean temporary data class
+  * Main method would to clean temporary data class
   *
   * @see Engine#Engine()
   */
-  public void     clean() {}
-
-  /**
-  * This method would to check actions
-  *
-  * @see Bootstrap#run()
-  */
-  public boolean check() {
-    return true;
+  public void     clean() {
+    Printer.printag("[@" + this.getType() + "]>", " Dump data have been clean!");
   }
 }

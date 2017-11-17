@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           Entity.java
  * @Date:               2017-11-06T05:00:29+01:00
- * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:20:26+01:00
+ * @Last modified by:   quentpilot
+ * @Last modified time: 2017-11-06T09:32:17+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -16,11 +16,9 @@
 package src.core.engine.builder;
 
 import java.util.*;
-import java.lang.*;
 import src.tools.print.*;
 import src.core.engine.AEngine;
 import src.builder.*;
-import src.builder.core.engine.entity.*;
 
 public class Entity extends AEngine {
 
@@ -31,6 +29,7 @@ public class Entity extends AEngine {
   */
   public          Entity() {
     this.type = "entitybot";
+    this.status = true;
   }
 
   /**
@@ -39,8 +38,7 @@ public class Entity extends AEngine {
   * @see Entity#run()
   */
   public boolean  build() {
-    this.setBuilder(new EntityBuilder());
-    this.setEntities(this.getBuilder().getEntities());
+    Printer.printag("[@" + this.getType() + "]>", " Working on entities builder...");
     return true;
   }
 
@@ -52,7 +50,7 @@ public class Entity extends AEngine {
   public boolean  run() {
     if (!this.build())
       return false;
-    this.setStatus(true);
+    Printer.printag("[@" + this.getType() + "]>", " Entities are built!");
     return true;
   }
 
@@ -61,14 +59,16 @@ public class Entity extends AEngine {
   *
   * @see Engine#Engine()
   */
-  public void     clean() {}
+  public void     clean() {
+    Printer.printag("[@" + this.getType() + "]>", " Dump data have been clean!");
+  }
 
   /**
-  * This method would to check actions
+  * This method would to return entities attribute value
   *
-  * @see Entity#run()
+  * @return entities attribute value
+  *
+  * @see AEngine#entities
   */
-  public boolean check() {
-    return true;
-  }
+  public ArrayList<Builder> getEntities() { return this.entities; }
 }

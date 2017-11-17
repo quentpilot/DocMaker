@@ -7,7 +7,7 @@
  * @Filename:           ApplicationRunner.java
  * @Date:               2017-11-05T23:44:20+01:00
  * @Last modified by:   quentpilot
- * @Last modified time: 2017-11-07T11:04:23+01:00
+ * @Last modified time: 2017-11-06T09:07:41+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -29,7 +29,6 @@ public class ApplicationRunner extends Engine {
     super("appbot");
     Printer.printbot("DocMaker is running...");
     this.run();
-    this.clean();
   }
 
   /**

@@ -6,8 +6,8 @@
  * @About:              You're welcome to hack and code as your are each of theses sources files <3:p|--<;
  * @Filename:           CheckRunner.java
  * @Date:               2017-11-06T00:22:06+01:00
- * @Last modified by:   quentin
- * @Last modified time: 2017-11-09T14:31:07+01:00
+ * @Last modified by:   quentpilot
+ * @Last modified time: 2017-11-06T09:33:36+01:00
  * @License:            MIT
  * @See:                projects.quentinlebian.fr/DocMaker
  */
@@ -29,7 +29,6 @@ public class CheckRunner extends Engine {
      super("checkbot");
      Printer.printbot("Check is running...");
      this.run();
-     this.clean();
    }
 
    /**
@@ -51,7 +50,11 @@ public class CheckRunner extends Engine {
    * @see Engine#Engine()
    */
    public boolean run(){
+     Printer.printbot("Data checkout in progress...");
      return true;
+     // build entity
+     // sort them
+     // build template
    }
 
    /**
@@ -59,5 +62,7 @@ public class CheckRunner extends Engine {
    *
    * @see Engine#Engine()
    */
-   public void clean(){}
+   public void clean(){
+     Printer.printag("[@" + this.getType() + "]>", " Website just built has been checked!");
+   }
 }
