@@ -1,6 +1,6 @@
 package models.builder.doc;
 
-import core.EApplication;
+import core.apps.EApplication;
 import models.builder.doc.http.HTTPMaker;
 import models.builder.http.deserialize.Deserializer;
 

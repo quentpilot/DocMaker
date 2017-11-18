@@ -2,7 +2,7 @@ package models.builder.http;
 
 import java.util.ArrayList;
 
-import core.EApplication;
+import core.apps.EApplication;
 import models.builder.ABuilder;
 import models.builder.doc.DocMaker;
 import models.builder.http.deserialize.Deserializer;

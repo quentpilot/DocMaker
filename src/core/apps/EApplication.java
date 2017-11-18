@@ -1,4 +1,4 @@
-package core;
+package core.apps;
 
 public enum EApplication {
 	HTTP("Website"),
