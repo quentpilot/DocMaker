@@ -29,7 +29,7 @@ To do so, an editor will be integrated to DocMaker from command-line, Admin CMS 
 	- Add and select current project repository, then Build & Run from Navigator... for example
 	
 - Clone, commit,... Project
-	- Configure your Github account from "Team > Git > configuration" if you haven't done previously
+	- Configure your Github account from "Window Preferences > Team > Git > configuration" if you haven't done previously
 	- Add Git repository from "Window > Show View > Other... > Git > Git Repositories"
 	- Clone or select related local repository cloned
 	- Add it as new project to any workspace you want
