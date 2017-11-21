@@ -19,7 +19,7 @@ public class HTTPBuilder extends ABuilder {
 	
 	public boolean build() {
 		// build POJO from DB
-		this.setDeserialize(new Deserializer<ArrayList<?>>(EFactoryType.JSON, this.getDao()));
+		this.setDeserialize(new Deserializer<ArrayList<?>>(EFactoryType.JSON));
 		if (!this.getDeserialize().getStatus())
 			return false;
 		

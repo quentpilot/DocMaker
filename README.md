@@ -35,7 +35,7 @@ To do so, an editor will be integrated to DocMaker from command-line, Admin CMS 
 	- Add it as new project to any workspace you want
 	- Then Select project, Build & Run
 	
-- Some helpers <a href="http://www.geo.uzh.ch/microsite/reproducible_research/post/rr-eclipse-git/">here</a>
+- Some helpers <a href="http://www.geo.uzh.ch/microsite/reproducible_research/post/rr-eclipse-git/" target="_blank">here</a>
 
 ### More
 - More infos on the wiki... soon.

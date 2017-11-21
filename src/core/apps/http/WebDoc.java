@@ -8,11 +8,12 @@ import tools.composer.Composer;
 
 public class WebDoc implements IApplication {
 
-	public Composer 		commander = new Composer();
+	public Composer 		commander = null;
 	protected ABuilder 		builder = null;
 	
 	public WebDoc() {
 		System.out.println("Welcome to WebDoc factory");
+		this.setCommander(new Composer());
 		this.setBuilder(new AppBuilder(EBuilder.HTTP));
 	}
 

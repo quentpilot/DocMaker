@@ -1,6 +1,11 @@
 package models.dao;
 
-import models.factory.*;
+import java.io.File;
+
+import models.factory.AFactory;
+import models.factory.JSONFactory;
+import models.factory.SQLFactory;
+import models.factory.XMLFactory;
 
 public abstract class ADAO<T> {
 	
@@ -12,7 +17,7 @@ public abstract class ADAO<T> {
 	
 	public abstract T get(int id);
 	
-	public abstract T get(T pojo);
+	public abstract T get(File file);
 	
 	public abstract T get(String filename);
 	

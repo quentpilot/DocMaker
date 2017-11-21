@@ -1,33 +1,51 @@
 package models.dao.tables;
 
+import java.io.File;
+import com.google.gson.Gson;
 import models.dao.JsonDAO;
+import models.pojo.http.Page;
+import tools.read.Reader;
 
-public class JsonPageDAO<T> extends JsonDAO<T> {
+public class JsonPageDAO extends JsonDAO<Page> {
 
+	public JsonPageDAO() {
+		super();
+	}
 	 
-	public boolean create(T obj) {
+	public boolean create(Page	 obj) {
 		return false;
 	}
 	 
-	public boolean edit(T obj) {
+	public boolean edit(Page obj) {
 		return false;
 	}
 	 
-	public boolean delete(T obj) {
+	public boolean delete(Page obj) {
 		return false;
 	}
 	 
-	public T get(int id) {
+	public Page get(int id) {
 		return null;
 	}
 	 
-	public T get(T pojo) {
+	public Page get(Page pojo) {
 		return null;
 	}
 	 
-	public T get(String filename) {
+	public Page get(String filename) {
 		return null;
 	}
-
 	
+	@SuppressWarnings("unused")
+	public Page get(File file) {
+		
+		Page 	page = new Page();
+		String	path = file.getAbsolutePath();
+		Reader 	reader = new Reader(path);
+		Gson	db = new Gson();
+		
+		page = db.fromJson("{\"path\": \"" + path + "\"}", Page.class);
+		return page;
+	
+	}
 }

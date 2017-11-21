@@ -5,6 +5,7 @@ import java.util.Collection;
 
 import models.dao.ADAO;
 import models.dao.EFactoryType;
+import models.dao.JsonDAO;
 import models.pojo.APOJO;
 
 public class Deserializer<T> extends ArrayList<Object> {
@@ -13,7 +14,7 @@ public class Deserializer<T> extends ArrayList<Object> {
 	protected EFactoryType		format;
 	protected boolean 			status = false;
 	protected ADAO<?>			dao = null;
-	protected IDeserializer		json = new JSONDeserializer();
+	protected IDeserializer		json = null;
 
 	public Deserializer() {}
 
@@ -25,14 +26,13 @@ public class Deserializer<T> extends ArrayList<Object> {
 		super(c);
 	}
 
-	public Deserializer(EFactoryType type, ADAO<?> db) {
+	public Deserializer(EFactoryType type) {
 		this.setFormat(type);
-		this.setDao(db);
 		this.run();
 	}
 
 	protected boolean run() {
-		this.build();
+		this.setStatus(this.build());
 		if (this.getStatus())
 			return true;
 		return false;
@@ -42,22 +42,21 @@ public class Deserializer<T> extends ArrayList<Object> {
 	protected boolean build() {
 		for (EFactoryType type : this.getFormat().values()) {
 			if (type.JSON.equals(this.getFormat())) {
-				this.setStatus(this.stackJSON());
-				break;
+				return this.stackJSON();
 			} else if (type.SQL.equals(this.getFormat())) {
-				this.setStatus(this.stackSQL());
-				break;
+				return this.stackSQL();
 			} else if (type.XML.equals(this.getFormat())) {
-				this.setStatus(this.stackXML());
-				break;
+				return this.stackXML();
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	protected boolean stackJSON() {
-		Collection<? extends Object> list;
+		Collection<? extends Object> list = null;
 		
+		this.setDao(new JsonDAO<>());
+		this.setJson(new JSONDeserializer(this.getDao()));
 		list = (Collection<? extends Object>) this.getJson().stack();
 		if (list != null) {
 			this.addAll(list);

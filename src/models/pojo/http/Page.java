@@ -1,6 +1,8 @@
 package models.pojo.http;
 
-public class Page {
+import models.pojo.APOJO;
+
+public class Page extends APOJO {
 
 	public Page() {}
 }

@@ -1,10 +1,11 @@
 package models.builder;
 
+import core.apps.IApplications;
 import models.builder.http.HTTPBuilder;
 import models.builder.java.JAVABuilder;
 import models.builder.man.MANBuilder;
 
-public class AppBuilder extends ABuilder {
+public class AppBuilder extends ABuilder implements IApplications {
 
 	protected ABuilder builder = null; 
 	
@@ -17,18 +18,13 @@ public class AppBuilder extends ABuilder {
 	public boolean build() {
 		for (EBuilder types : this.getApp().values()) {
 			if (types.HTTP.equals(this.getApp())) {
-				this.setBuilder(new HTTPBuilder());
-				break;
+				return this.run_http();
 			} else if (types.MAN.equals(this.getApp())) {
-				this.setBuilder(new MANBuilder());
-				break;
+				return this.run_man();
 			} else if (types.JAVA.equals(this.getApp())) {
-				this.setBuilder(new JAVABuilder());
-				break;
+				return this.run_java();
 			}
 		}
-		if (this.getBuilder().getStatus())
-			return true;
 		return false;
 	}
 
@@ -38,6 +34,30 @@ public class AppBuilder extends ABuilder {
 
 	public void setBuilder(ABuilder builder) {
 		this.builder = builder;
+	}
+
+	@Override
+	public boolean run_http() {
+		this.setBuilder(new HTTPBuilder());
+		if (this.getBuilder().getStatus())
+			return true;
+		return false;
+	}
+
+	@Override
+	public boolean run_man() {
+		this.setBuilder(new MANBuilder());
+		if (this.getBuilder().getStatus())
+			return true;
+		return false;
+	}
+
+	@Override
+	public boolean run_java() {
+		this.setBuilder(new JAVABuilder());
+		if (this.getBuilder().getStatus())
+			return true;
+		return false;
 	}
 
 }

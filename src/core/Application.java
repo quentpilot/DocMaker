@@ -10,7 +10,7 @@ import tools.composer.Composer;
 public class Application implements IApplication , IApplications {
 
 	public static IApplication	app = null;
-	public Composer				commander = new Composer();
+	public Composer				commander = null;
 	
 	public Application () {}
 	

@@ -1,10 +1,10 @@
 package models.dao;
 
+import java.io.File;
+
 public class DAO<T> extends ADAO<T> {
 
-	public DAO() {
-		System.out.println(this.getClass().getName() + " is running...");
-	}
+	public DAO() {}
 	 
 	public boolean create(T obj) {
 		return false;
@@ -27,6 +27,10 @@ public class DAO<T> extends ADAO<T> {
 	}
 
 	public T get(String filename) {
+		return null;
+	}
+
+	public T get(File file) {
 		return null;
 	}
 }
